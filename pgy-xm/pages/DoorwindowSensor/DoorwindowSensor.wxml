@@ -1,0 +1,46 @@
+<!--pages/MCCGQ/MCCGQ.wxml-->
+<view class='container'>
+  <view class='room'>
+    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='list'>    
+    <view class='box' wx:for='{{devlogarr}}' wx:key='index'>
+      <view class='item'>
+        <view class='title'>
+          <view style='font-size:46rpx;'>{{item.title}}</view>
+          <view class='date'>{{item.date}}</view>
+        </view>
+      </view>      
+      <view class='item' wx:for='{{item.arr}}' wx:key='index'>
+        <view class='big {{item.active==1?"active":""}}'></view>
+        <view class='timer {{item.active==1?"active":""}}'>{{item.timer}}</view>
+        <view class='text {{item.active==1?"active":""}}'>{{item.logna}}   {{item.action}}</view>       
+      </view>      
+    </view>
+  </view>
+  <view class='btn' bindtap='delRecord'>删除历史记录</view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>    
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>        
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

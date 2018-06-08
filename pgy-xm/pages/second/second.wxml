@@ -1,0 +1,25 @@
+<!--pages/second/second.wxml-->
+<view class="container">
+  <view class='top'>
+    <view>长按管家顶部按键</view>
+    <view>直至底部灯光闪烁</view>
+  </view>
+  <view class='img'>
+    <image mode='widthFix' src='http://192.168.1.215:3400/img/shanshuo.gif'></image>
+  </view>
+  <view class='operation'>
+    <view class='start' bindtap='networking'>白色灯光闪烁，开始联网</view>
+    <view class='mistakes' bindtap='changeModal'>白色灯光未闪烁</view>
+  </view>
+  <view class='bottom'>
+    <view>PuGoing</view>
+    <view>让居家生活更加顺畅智能</view>
+  </view>
+  <modal class="modal" hidden="{{showType==1}}" no-cancel bindconfirm="modalOk" confirmText="重新尝试">
+    <view class='list'>
+      <view style='margin-bottom:20rpx;'>1.长按功能键，并等待5秒</view>
+      <view>2.将管家断电，并等待15秒后再接通电源</view>
+    </view>
+
+  </modal>
+</view>

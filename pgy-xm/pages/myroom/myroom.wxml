@@ -1,0 +1,19 @@
+<!--pages/myroom/myroom.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item' wx:for='{{roomList}}' wx:key='index'>
+      <view class='photo'>
+      </view>
+      <view class='text' bindtap='updataroom' data-str='{{index}}'>{{item.name}}</view>
+      <view class='dele' data-roomindex='{{index}}' bindtap='dele'>x</view>
+    </view>
+    
+    <view class='item' bindtap='gopage' data-str='addroom'>
+      <view class='add'>
+      </view>
+      <view class='text'>添加房间</view>
+      <view class='dele'></view>
+    </view>
+  </view>
+
+</view>

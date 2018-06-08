@@ -1,0 +1,27 @@
+<!--pages/sceneSet/sceneSet.wxml-->
+<view class="container">
+  <view class='top'>
+    <view class='topBox'>
+      <view class='text'>执行动作 ：</view>
+      <view class='name'>
+          {{obj.name}}
+      </view>
+      <view class='iocn'>
+      </view>
+    </view>
+  </view>
+  <view class='makeToMe'>
+    <input placeholder='{{obj.pstr}}'  placeholder-class='phcolor' value='{{value}}' bindinput='setValue'></input>
+  </view>
+  <view class='prompt'>不能输入字母，标点及符号</view>
+  <view class='list'>
+    <view wx:for='{{obj.list}}' wx:key='index' bindtap='changeValue' data-str='{{item}}'>
+      <text>{{item}}</text>
+    </view>
+  </view>
+  <view class='time'>
+    <input placeholder='请输入时间' placeholder-class='phcolor' value='{{time}}' bindinput='setTime' type='number'></input>
+  </view>
+  <view class='prompt'>此时间为多久后执行下一个动作，不能超过300秒</view>
+  <view class='btn' bindtap='consevres'>保存</view>
+</view>

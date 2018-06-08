@@ -1,0 +1,346 @@
+/* pages/JDH/JDH.wxss */
+
+page {
+  background: #efefef;
+}
+
+.room {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+}
+
+.room .text {
+  display: flex;
+  margin-left: 5%;
+}
+
+.room .iocn {
+  display: flex;
+  width: 80rpx;
+  height: 50rpx;  
+  margin-right: 5%;
+  background: url(http://192.168.1.215:3400/img/set.svg) no-repeat center;
+  background-size: auto 100% ;
+}
+.TVpanel{
+  display: flex;
+  width: 100%;
+  background: #fff;
+}
+.TVpanel view{
+  padding: 20rpx;
+  padding-left: 30rpx;
+}
+.study{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+  
+}
+.study view{  
+  display: flex;
+  width: 150rpx;
+  justify-content: center;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 60rpx;
+}
+.list .ones{
+  display: flex;
+  margin-top: 50rpx;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 5%;
+}
+.list .ones>view{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130rpx;
+  height: 130rpx;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.btn.active{
+  background: #3de4ff;
+}
+.fourth{
+  display: flex;
+  margin-top: 100rpx;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 5%;
+}
+.fourth .yuan{
+  display: flex;
+}
+.fourth .control{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  text-align: center
+}
+.fourth .control view{
+  display: flex;  
+  justify-content: center;
+  height: 100rpx;
+}
+.fourth .control view .jia{
+  width: 110rpx;  
+  padding: 0 10rpx;
+  background: #fff;
+  border-radius : 100rpx 100rpx 0 0;
+}
+.fourth .control view .jia.active{
+  background: #3de4ff;
+}
+.fourth .control view text{
+  display: block;
+  flex-direction: row;
+  width: 200rpx;
+}
+.fourth .control view .middle{
+  width: 110rpx;  
+  padding: 0 10rpx;
+  background: #fff;
+  border-radius : 0;
+}
+.fourth .control view .jian{
+  width: 110rpx;  
+  padding: 0 10rpx;
+  background: #fff;
+  border-radius : 0 0 100rpx 100rpx;
+}
+.fourth .control view .jian.active{
+  background: #3de4ff;
+}
+.fourth .yuan{
+  display: flex;
+  flex: 2;
+  justify-content: center;
+}
+.fourth .yuan .box{
+  display: flex;
+  width: 300rpx;
+  height: 300rpx;  
+  flex-direction: column;
+  background: #fff;
+  border-radius: 50%;
+}
+.fourth .yuan .box .up{
+  display: flex;
+  height: 100rpx;
+  justify-content: center;
+  padding-top: 20rpx;
+  
+}
+.fourth .yuan .box .up view{
+  display: flex;
+  justify-content: center;
+  width: 100rpx;
+  height: 100rpx;
+  align-items: flex-start;
+}
+.fourth .yuan .box .up view.active{
+  background: #3de4ff
+ }
+.fourth .yuan .box .down{
+  display: flex;
+  height: 100rpx;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20rpx;
+}
+.fourth .yuan .box .down view{
+  display: flex;
+  justify-content: center;
+  width:100rpx;
+  height: 100rpx;
+  align-items: flex-end;
+}
+.fourth .yuan .box .down view.active{
+  background: #3de4ff
+ }
+.fourth  .yuan .box .middle{
+  display: flex;
+  height: 100rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.fourth .yuan .box .middle .left,.right{
+  display: flex;
+  width: 120rpx;
+  height: 100rpx;  
+  align-items: center;
+}
+.fourth .yuan .box .middle .left{
+  padding-left: 20rpx;
+}
+.fourth .yuan .box .middle .left.active{
+  background: #3de4ff;
+}
+.fourth .yuan .box .middle .confirm{
+  width:120rpx;
+  display:flex;
+  justify-content:center;
+  height:100rpx;
+  align-items:center;
+}
+.fourth .yuan .box .middle .confirm.active{
+  background: #3de4ff
+}
+.fourth .yuan .box .middle .right{
+  justify-content: flex-end;
+  padding-right: 20rpx;
+}
+.fourth .yuan .box .middle .right.active{
+  background: #3de4ff;
+}
+.fourth .yuan .box .middle .automatic{
+  border-bottom: 2px solid #000;
+}
+
+.num{
+  position: fixed;
+  top: 30%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 90%;
+  border-left: 10px solid #eee;
+  border-top:10px solid #eee; 
+}
+.num .box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 10px solid #eee;
+  border-right: 10px solid #eee;
+}
+.num .numList{
+  display: flex;
+  flex-direction: row;    
+}
+.num .numList view{
+  display: flex;
+  flex: 1;
+  height: 100rpx;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 10px solid #eee;
+  border-right: 10px solid #eee;
+}
+
+action-sheet-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+  padding: 30rpx 0;
+}
+action-sheet-item .more{
+  width: 40rpx;
+  height: 40rpx;
+  background: url(http://192.168.1.215:3400/img/right.svg) no-repeat center;
+  background-size: 580% auto;
+}
+
+.showBG{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.listpicker{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  background: #eee;
+  z-index: 100;
+}
+.listheader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom:1px solid #eee;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #fff;
+  padding: 20rpx 0;
+}
+.list-true{
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+.list-hide{
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+.list-title{ 
+  display: flex;
+  justify-content: center;
+  font-size: 38rpx;
+  flex: 3;
+  
+}
+.studyBtn{
+  color: #dddedf;
+  border: 1px solid #fff;
+}
+.fourth .yuan .box.studyBtn{
+  color: #dddedf;
+  border: 1px solid #fff;
+}
+.fourth .control view .jia.studyBtn{
+  color: #dddedf;
+  border: 1px solid #fff;
+}
+.fourth .control view .jian.studyBtn{
+  color: #dddedf;
+  border: 1px solid #fff;
+}
+.finish{
+  color: #000;
+  border: 1px solid #fff;
+}
+.fourth .yuan .box.finish{
+  color: #000;  
+}
+.fourth .control view .jia.finish{
+  color: #000;
+  border: 1px solid #fff;
+}
+.fourth .control view .jian.finish{
+  color: #000;
+  border: 1px solid #fff;
+}

@@ -1,0 +1,43 @@
+<!--pages/equipment/equipment.wxml-->
+<view class='container'>
+  <view class='showpg' bindtap='hide' wx:if='{{showStatus}}'></view> 
+  <view class='title'>
+    <view>
+      <view class='welcome'>欢迎回家</view>
+      <view class='add' bindtap='goPage' data-str='addEquipment'>
+        <view></view>
+      </view>
+    </view>
+    <view class='text'>开启你的智能家居生活～</view>
+    
+  </view>
+  <scroll-view class="navList" scroll-x="true">
+    <view class='nav'>
+      <view class="navBox {{roomName=='所有房间'?'active':''}}" bindtap='choseRoom' data-str='所有房间'>
+        所有房间
+      </view>      
+      <view class="navBox {{roomName==item.name?'active':''}}" wx:for="{{roomList}}" wx:key='index' bindtap='choseRoom' data-str='{{item.name}}'>
+        {{item.name}}
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <view class='default' wx:for='{{roomCategoryList}}' wx:key='index' wx:if='{{item.status==1 && item.content.length!=0}}'>
+    <view class='title'>{{item.name}}</view>
+    <view class='list'>
+      <view class='item' wx:for='{{item.content}}' wx:key='index' bindtap='goPage' data-str='{{item.dpanel}}' data-obj='{{item}}'>
+        <view class='box'>
+          <view class='img'>
+            <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/{{item.dlogo}}'></image>
+            <view class='biaoqian' wx:if='{{item.dlab!=""}}'></view>
+            <view class='rf' wx:if='{{item.dch<30&&item.dch>10}}'>RF</view>
+            <view class='rf' wx:if='{{item.dch<10&&item.dch>0}}'>IR</view>
+          </view>
+          <view class='status'>{{item.dinfo?item.dinfo:'暂无记录'}} </view>
+          <view class='name'>{{item.dname}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,97 @@
+<!--pages/TYY/TYY.wxml-->
+<view class='container'>
+  <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
+    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+    <view class='text' style='width:250rpx;'>学习模式</view>
+    <view class='text' bindtap='Qstudy'>保存</view>
+  </view>
+  <view class='SBpanel' wx:if='{{SBtype=="choose"}}'>
+    <view>{{brand}}{{name}}({{SBpanel}}/{{list.length}})</view>
+  </view>
+  <view class='list'>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.Y_ON==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_ON"?"active":""}}' data-key='Y_ON' bindtap='action'>开/关</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.Y_MENU==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_MENU"?"active":""}}' data-key='Y_MENU' bindtap='action'>菜单</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.Y_MUTE==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_MUTE"?"active":""}}' data-key='Y_MUTE' bindtap='action'>静音</view>
+      </view>
+    </view>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.Y_AUTO==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_AUTO"?"active":""}}' data-key='Y_AUTO' bindtap='action'>自动</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.Y_RETURN==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_RETURN"?"active":""}}' data-key='Y_RETURN' bindtap='action'>退出</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.Y_AK1==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_AK1"?"active":""}}' data-key='Y_AK1' bindtap='action' style='flex-direction: column'>
+          <view>{{AK1[0]?AK1[0]:"+"}}{{AK1[1]?AK1[1]:""}}</view>
+          <view>{{AK1[2]?AK1[2]:""}}{{AK1[3]?AK1[3]:""}}</view>
+        </view>
+      </view>
+    </view>   
+    <view class='third'>
+      <view class='yuan'>    
+        <view class='box'>
+          <view class='up'>
+            <view class='yuanbtn {{studyList.Y_UP==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_UP"?"active":""}}' data-key='Y_UP' bindtap='action'>·</view>
+          </view>
+          <view class='middle'>
+            <view class='left yuanbtn {{studyList.Y_LEFT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_LEFT"?"active":""}}' data-key='Y_LEFT' bindtap='action'>·</view>
+            <view class='zhong yuanbtn {{studyList.Y_OK==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_OK"?"active":""}}' data-key='Y_OK' bindtap='action' >
+              OK
+            </view>
+            <view class='right yuanbtn {{studyList.Y_RIGHT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_RIGHT"?"active":""}}' data-key='Y_RIGHT' bindtap='action'>·</view>
+          </view>
+          <view class='down'>
+            <view class=' yuanbtn {{studyList.Y_DOWN==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_DOWN"?"active":""}}' data-key='Y_DOWN' bindtap='action'>·</view>
+          </view>
+        </view>    
+      </view>
+      <view class='control'>
+        <view>
+          <view class='btn jia {{studyList.Y_VOICEup==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_VOICEup"?"active":""}}' data-key='Y_VOICEup' bindtap='action'>+</view>
+        </view>
+        <view>
+           <view class='btn middle'> 音量 </view> 
+        </view>
+        <view>
+          <view class='btn jian {{studyList.Y_VOICEdown==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="Y_VOICEdown"?"active":""}}' data-key='Y_VOICEdown' bindtap='action'>-</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changType'>
+      <view>学习模式</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>        
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

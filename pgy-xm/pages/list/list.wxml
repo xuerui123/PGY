@@ -1,0 +1,15 @@
+<!--pages/list/list.wxml-->
+<view class='container'>
+  <view class='search'>
+    <view class='iocn'></view>
+    <input placeholder-class='phcolor' placeholder='搜素品牌' bindinput='search'></input>
+    <view class='text' bindtap='searchWord'>搜索</view>
+  </view>
+  <view class='nav'>
+    <view class='active'>官方库</view>
+    <view>用户上传</view>
+  </view>
+  <view class='list'>
+    <view wx:for='{{list}}' wx:key='inedx' wx:if='{{item.show==1}}' data-brand='{{item.brand}}' bindtap='creater'>{{item.brand}}</view>
+  </view>
+</view>

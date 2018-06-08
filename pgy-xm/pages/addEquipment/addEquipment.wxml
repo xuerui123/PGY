@@ -1,0 +1,152 @@
+<!--pages/addEquipment/addEquipment.wxml 所有设备-->
+<view class='container'>
+  <view class='list'>
+    <view class='item' bindtap='gopage' data-str='list' data-name='电视' data-page='TV' data-dch='01' data-dsys='2126' >
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/TV.svg'></image>
+        </view>
+        <view class='name'>电视</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='机顶盒' data-page='STB' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/STB.svg'></image>
+        </view>
+        <view class='name'>机顶盒</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='空调' data-page='AirConditioning' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/AirConditioning.svg'></image>
+        </view>
+        <view class='name'>空调</view>
+      </view>
+    </view>
+    <view class='item' bindtap='chuanglian' data-str='Curtain'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Curtain.svg'></image>
+        </view>
+        <view class='name'>窗帘</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='电风扇' data-page='Fan1' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Fan.svg'></image>
+        </view>
+        <view class='name'>风扇</view>
+      </view>
+    </view>
+    <view class='item' bindtap='jiashiqi' data-str='list' data-name='加湿器' data-page='Humidifier' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Humidifier.svg'></image>
+        </view>
+        <view class='name'>加湿器</view>
+      </view>
+    </view>
+    <view class='item' bindtap='saodijiqiren'  data-str='list' data-name='扫地机器人' data-page='SweepingRobot' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SweepingRobot.svg'></image>
+        </view>
+        <view class='name'>扫地机器人</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='空气净化器' data-page='AirPurifier' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/AirPurifier.svg'></image>
+        </view>
+        <view class='name'>空气净化器</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='热水器' data-page='WaterHeater' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/WaterHeater.svg'></image>
+        </view>
+        <view class='name'>热水器</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='投影仪' data-page='Projector' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Projector.svg'></image>
+        </view>
+        <view class='name'>投影仪</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gongfang' data-str='list' data-name='功放' data-page='PowerAmplifier' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/PowerAmplifier.svg'></image>
+        </view>
+        <view class='name'>功放</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='网络盒子' data-page='NetworkBox' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/NetworkBox.svg'></image>
+        </view>
+
+        <view class='name'>网络盒子</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='list' data-name='单反' data-page='Camera' data-dch='01' data-dsys='2126'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Camera.svg'></image>
+        </view>
+
+        <view class='name'>单反</view>
+      </view>
+    </view>    
+    <view class='item' bindtap='gopage' data-str='QMKG'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SwitchOne.svg'></image>
+        </view>
+
+        <view class='name'>墙面开关</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='DIY'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/DIY.svg'></image>
+        </view>
+        <view class='name'>自定义</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='UserUp'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/UserUpload.svg'></image>
+        </view>
+
+        <view class='name'>用户上传</view>
+      </view>
+    </view>
+  </view>
+  <view class='prompt'>
+    <view class='text'>
+      <view>
+        ● 当你在以上列表中找不到对应设备时，请选择自定义
+      </view>
+    </view>
+    <view class='text'>
+      <view>
+        ● 当你在以上列表中可以找到对应设备，但调取不到相应型号，控制不了设备时，请选择用户上传
+      </view>
+    </view>
+  </view>
+  <modal hidden="{{hideNameBox}}" title="请输入设备名" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <input type='text' placeholder="请输入设备名" style='color:#000;font-size:38rpx;' bindinput='addname' />
+  </modal>
+</view>

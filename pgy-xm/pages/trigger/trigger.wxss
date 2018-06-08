@@ -1,0 +1,260 @@
+/* pages/trigger/trigger.wxss */
+
+page {
+  background: #efefef;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  font-size: 34rpx;
+}
+
+.top .help {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 30rpx;
+  background: url(http://192.168.1.215:3400/img/help.svg) no-repeat center;
+  background-size: 90% auto;
+}
+
+.top .chose {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+  padding-right: 15rpx;
+  background-size: auto 50%;
+}
+
+.top .title {
+  color: #a7dcef;
+}
+
+.prompt {
+  width: 90%;
+  font-size: 30rpx;
+  margin: 20rpx 0;
+  color: #6a6a6a;
+}
+
+.condition {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #fff;
+  justify-content: center;
+}
+
+.condition .box {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  padding: 30rpx 0;
+}
+
+.condition .box view {
+  display: flex;
+  justify-content: center;
+  width: 47%;
+  padding: 20rpx 0;
+  border: 1px solid #9b9fac;
+  border-radius: 10rpx;
+  color: #9b9fac;
+}
+
+.condition .box view.active {
+  color: #1fb4fb;
+  border: 1px solid #1fb4fb;
+}
+.conditionlist{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #eee;
+  margin-bottom: 130rpx;
+}
+.conditionlist .item{
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-left: 5%;  
+  width: 90%;
+  padding: 20rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.conditionlist .item .text{
+  font-size: 32rpx;
+}
+.conditionlist .item .del{
+  color: #3de4ff;
+}
+.search {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  background: #fff;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.search .box {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  align-items: center;
+}
+
+.search .box .text {
+  display: flex;
+  flex: 5;
+  padding: 20rpx 0;
+  font-size: 34rpx;
+}
+
+.search .box .iocn {
+  display: flex;
+  flex: 1;
+  height: 45rpx;
+  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+  background-size: auto 100%;
+}
+.search .list{
+  position: absolute;
+  display: flex;
+  width: 90%;
+  top: 100rpx;
+  left: 5%;
+  z-index: 100;
+}
+.search .list view{
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  justify-content: center;  
+}
+
+.list .item {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 5%;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1px solid #eee;
+  font-size: 34rpx;
+}
+
+.list .item .chose {
+  display: flex;
+  flex: 1;
+  height: 40rpx;
+  background: url(http://192.168.1.215:3400/img/xuanqu.svg) no-repeat left;
+  background-size: auto 100%;
+}
+
+.list .item .chose.active {
+  background: url(http://192.168.1.215:3400/img/xuanqu1.svg) no-repeat left;
+  background-size: auto 100%;
+}
+
+.list .item .text {
+  display: flex;
+  flex: 6;
+  color: #6a6a6a;
+  overflow: hidden;
+}
+
+.list .item .text text {
+  display: block;
+  line-height: 35rpx;
+  height: 100rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list .item .status {
+  display: flex;
+  flex: 2;
+  justify-content: flex-end;
+  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+  padding-right: 40rpx;
+  background-size: auto 50%;
+}
+
+.btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  color: #1fb4fb;
+  display: flex;
+  justify-content: center;
+  padding: 30rpx 0;
+}
+
+.showBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.listpicker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #eee;
+  z-index: 100;
+}
+
+.listheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #fff;
+  padding: 20rpx 0;
+}
+
+.list-true {
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+
+.list-hide {
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+
+.list-title {
+  display: flex;
+  justify-content: center;
+  font-size: 38rpx;
+  flex: 3;
+}

@@ -1,0 +1,48 @@
+<!--pages/home/home.wxml-->
+<view class="container">  
+  <view class='broadcast'>
+    <image class='iocn'></image>
+    <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+      <block wx:for="{{msgList}}" wx:key="msgListurl">
+        <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate">
+          <swiper-item>
+            <view class="swiper_item">
+              <text selectable='true'>{{item.a}}</text>
+            </view>
+          </swiper-item>
+        </navigator>
+      </block>
+    </swiper>
+  </view>  
+  <scroll-view class='chatBox' style="height:{{windowHeight}};" scroll-into-view="{{toView}}" scroll-y="true">
+  
+    <view class='item {{item.man=="user"?"user":""}}' wx:for='{{chatList}}' wx:key='index'>
+      <view class='photo' wx:if='{{item.man=="xq"}}'>
+        <image src='http://192.168.1.215:3400/img/111.png' mode='widthFix' ></image>
+      </view>
+      <view class='content {{item.man=="user"?"user":""}}'>
+        <view class='text' wx:if='{{item.type=="text"}}'>
+          <text selectable='true'>{{item.content}}</text>        
+        </view>
+        <view class='img' wx:if='{{item.type=="img"}}'>
+          <image src='{{item.content}}' mode='widthFix'></image>
+        </view>
+        <view class='mp3' wx:if='{{item.type=="mp3"}}' bindtap='playMp3' data-key='{{item.content}}'>
+          <view>语音消息</view>
+        </view>
+      </view>
+      <view class='photo' wx:if='{{item.man=="user"}}'>
+      <image src='http://192.168.1.215:3400/img/111.png' mode='widthFix'></image>
+    </view>
+    </view>
+    <view id='weizhi' style='height:1px;'></view>        
+  </scroll-view>
+  <view class='bottom'>
+    <view class='text'>
+      <input placeholder='请输入您想让管家做的事' placeholder-class="phcolor" bindinput='domsg' value='{{sendText}}'></input>
+    </view>
+    <view class='btn' bindtap='send'>发送</view>
+    <!-- <button class="btn-style" bindtouchstart="touchdown" bindtouchend="touchup">按住 录音</button>     -->
+
+</view> 
+</view>

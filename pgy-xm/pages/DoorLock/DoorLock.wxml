@@ -1,0 +1,51 @@
+<!--pages/ZNMS/ZNMS.wxml-->
+<view class='container'>
+  <view class='room'>
+    <view class='text'>默认房间</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='list'>
+    <view class='item'>
+      <view class='btn'>开锁</view>
+    </view>
+    <view class='item' bindtap='gopage' data-str='ZNMSBJ'>
+      <view class='btn'>报警</view>
+    </view>
+    <view class='item'>
+      <view class='btn' bindtap='gopage' data-str='ZNMSJL'>记录</view>
+    </view>
+    <view class='item'>
+      <view class='btn' style='flex-direction: column;'>
+        <view>电量</view>
+        <view style='font-size:28rpx;'>40%</view>
+      </view>
+    </view>
+  </view>
+
+  <action-sheet hidden="{{menuShow}}" bindchange="showMnu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>
+    <!-- <action-sheet-item bindtap='changeWord'>
+      <view>修改唤醒词</view>
+    </action-sheet-item> -->
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="open" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="open" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='confirm'>
+      <picker-view-column style='text-align:center'>
+        <view wx:for="{{roomList}}" wx:key="item" data-id='{{item}}' style="line-height: 50px;padding-left:10px;">{{item}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

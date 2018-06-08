@@ -1,0 +1,46 @@
+<!--pages/QMKG/QMKG.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item' bindtap='gopage' data-num='1'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SwitchOne.svg'></image>
+        </view>
+        <view class='name'>单开开关</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-num='2'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SwitchTwo.svg'></image>
+        </view>
+        <view class='name'>双开开关</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gopage' data-num='3'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SwitchThree.svg'></image>
+        </view>
+        <view class='name'>三开开关</view>
+      </view>
+    </view>
+  </view>
+  <view class='prompt'>
+    <view class='text'>
+      <view>
+        ● 当墙面只有一个按键时，请选择单开开关
+      </view>
+    </view>
+    <view class='text'>
+      <view>
+        ● 当墙面只有两个按键时，请选择双开开关
+      </view>
+    </view>
+    <view class='text'>
+      <view>
+        ● 当墙面有三个按键时，请选择三开开关
+      </view>
+    </view>
+  </view>
+</view>

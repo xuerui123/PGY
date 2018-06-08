@@ -1,0 +1,97 @@
+<!--pages/ZZGJ/ZZGJ.wxml-->
+<view class='container'>
+  <view class='room'>
+    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='list'>
+    <view class='item'>
+      <view class='Ltext'>唤醒词</view>
+      <view class='Rtext'>张学友</view>
+    </view>
+    <view class='item'>
+      <view class='Ltext'>灵敏度</view>
+      <view class='Rtext'>4</view>
+    </view>
+    <view class='item'>
+      <view class='Ltext'>光线</view>
+      <view class='Rtext'>偏暗</view>
+    </view>
+    <view class='item'>
+      <view class='Ltext'>温度</view>
+      <view class='Rtext'>17℃
+        <view class='iocn'></view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='Ltext'>湿度</view>
+      <view class='Rtext'>68%
+        <view class='iocn'></view>
+      </view>
+    </view>
+  </view>
+  <view class='btnList'>
+    <view class='btnBox'>
+      <view class='btn' data-str='VC_LAST' data-dvcm='上一首' bindtap='action' >
+        <view class='{{btnName=="VC_LAST"?"active":""}}'>上一首</view>
+      </view>
+      <view class='btn' wx:if='{{status=="VC_PLAY"}}' data-str='VC_PLAY' data-dvcm='播放' bindtap='action' >
+        <view class='{{btnName=="VC_PLAY"?"active":""}}'>播放</view>
+      </view>
+      <view class='btn' wx:if='{{status=="VC_PAUSE"}}' data-str='VC_PAUSE' data-dvcm='播放' bindtap='action'>
+        <view class='{{btnName=="VC_PAUSE"?"active":""}}'>暂停</view>
+      </view>
+      <view class='btn' data-str='VC_NEXT' data-dvcm='下一首' bindtap='action'>
+        <view class='{{btnName=="VC_NEXT"?"active":""}}'>下一首</view>
+      </view>
+    </view>
+    <view class='btnBox'>
+      <view class='btn' data-str='VC_VOL+'  data-dvcm='音量+' bindtap='action'>
+        <view class='{{btnName=="VC_VOL+"?"active":""}}'>音量+</view>
+      </view>
+      <view class='btn'>
+
+      </view>
+      <view class='btn' data-str='VC_VOL-'  data-dvcm='音量-' bindtap='action'>
+        <view class='{{btnName=="VC_VOL-"?"active":""}}'>音量-</view>
+      </view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changeWord'>
+      <view>修改唤醒词</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changeSensitive'>
+      <view>修改灵敏度</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <modal hidden="{{wordShow}}" confirm-text="提交" cancel-text="取消" bindcancel="wordCancel" bindconfirm="wordConfirm" style='background:#efefef;'>   
+    <input class='HostName' type='text'placeholder="请输入您想给管家取的名字" bindinput='hostName'/>      
+    <text>修改管家名称如：“叮当猫”（不少于3个字）</text>
+  </modal>
+  <modal hidden="{{sensitiveShow}}" confirm-text="提交" cancel-text="取消" bindcancel="sensitiveCancel" bindconfirm="sensitiveConfirm" style='background:#efefef;'>   
+  <view  class='sensitive'>灵敏度：3</view>
+ <slider bindchange="sensitivChange" min="0" max="10" value='3'/>    
+  </modal>  
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>        
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

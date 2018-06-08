@@ -1,0 +1,119 @@
+<!--pages/CZlist/CZlist.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/DeskLamp.svg'></image>
+        </view>
+        <view class='name'>台灯</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/STB.svg'></image>
+        </view>
+        <view class='name'>机顶盒</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/AirConditioning.svg'></image>
+        </view>
+        <view class='name'>空调</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Fan.svg'></image>
+        </view>
+        <view class='name'>风扇</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Humidifier.svg'></image>
+        </view>
+        <view class='name'>加湿器</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SweepingRobot.svg'></image>
+        </view>
+        <view class='name'>扫地机器人</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/AirPurifier.svg'></image>
+        </view>
+        <view class='name'>空气净化器</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/WaterHeater.svg'></image>
+        </view>
+        <view class='name'>热水器</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Projector.svg'></image>
+        </view>
+        <view class='name'>投影仪</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/PowerAmplifier.svg'></image>
+        </view>
+        <view class='name'>功放</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/NetworkBox.svg'></image>
+        </view>
+        <view class='name'>盒子</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Camera.svg'></image>
+        </view>
+
+        <view class='name'>单反</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SmartPlug.svg'></image>
+        </view>
+        <view class='name'>其他</view>
+      </view>
+    </view>    
+  </view>
+  <view class='equipmentName'>
+    <input placeholder='请输入您想给设备取的名字' placeholder-class='phcolor'></input>
+  </view>
+  <view class='prompt'>
+    不能输入字母、空格或者符号（最多5个字）
+  </view>
+  <view class='btn'>
+    保存
+  </view>
+</view>

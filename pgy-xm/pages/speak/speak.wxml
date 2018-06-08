@@ -1,0 +1,26 @@
+<!--pages/sceneSet/sceneSet.wxml-->
+<view class="container">
+  <view class='top'>
+    
+  </view>
+  <view class='makeToMe'>
+    <input placeholder='请输入您要对管家说的话'  placeholder-class='phcolor' value='{{value}}' bindinput='setValue'></input>
+  </view>
+  <view class='prompt'>不能输入字母，标点及符号</view>
+  <view class='list'>
+    <view>
+      <text bindtap='changeValue' data-str='我回来了'>我回来了</text>
+    </view>
+    <view>
+      <text bindtap='changeValue' data-str='秀一下'>秀一下</text>
+    </view>
+    <view>
+      <text bindtap='changeValue' data-str='芝麻开门'>芝麻开门</text>
+    </view>
+    <view>
+      <text bindtap='changeValue' data-str='回家模式'>回家模式</text>
+    </view>
+  </view>
+  
+  <view class='btn' bindtap='conserve'>保存</view>
+</view>

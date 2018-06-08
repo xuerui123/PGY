@@ -1,0 +1,150 @@
+/* pages/home/home.wxss */
+page{
+  width: 100%;
+  background: #efefef;
+}
+.container{
+  position: relative;
+}
+.top{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+  background: #fcfcfc;
+  height: 90rpx;
+  z-index: 10;
+  align-items: center;
+}
+.top .my{
+  width: 80rpx;
+  height: 90rpx;
+  background: url(http://192.168.1.215:3400/img/caidan.png) no-repeat center;
+  background-size:70% auto; 
+  margin-left: 20rpx;
+}
+.top .clock{
+  width: 80rpx;
+  height: 90rpx;
+  background: url(http://192.168.1.215:3400/img/clock.png) no-repeat center;
+  background-size:70% auto; 
+  margin-right: 20rpx;
+}
+.broadcast{
+    display: flex;  
+    position: fixed;    
+    flex-direction: row;  
+    width: 100%;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+    padding: 16rpx 0;
+    background: #fff;
+    z-index: 10;
+}
+.broadcast .iocn{
+  background: url('http://192.168.1.215:3400/img/laba.png') no-repeat center;
+  background-size: 60% auto;
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+}
+.swiper_container {
+ height: 60rpx;
+ line-height: 60rpx;
+ width: 80%;
+ padding-left: 10px;
+}
+.swiper_item { 
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+   letter-spacing: 1rpx; 
+}
+.bottom{
+  background: #fff;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10rpx 0;
+  align-items: center;
+}
+.bottom .text{
+  display: flex;
+  flex: 3;
+}
+.bottom .text input{
+  width: 100%;
+  padding: 15rpx 0;
+  padding-left: 20rpx;
+  color:#343434;
+}
+
+.bottom .btn{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  border-left: 1px solid #eee;
+  padding: 15rpx 0;
+  color:#1FB4FB;
+}
+.chatBox{
+  display: flex;
+  flex-direction: column;  
+  width: 90%;
+  margin-bottom: 120rpx;
+  margin-top: 100rpx;
+}
+.chatBox .item{
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.chatBox .item.user{
+  justify-content: flex-end;
+}
+
+.chatBox .item .photo{
+  display: flex;
+  background: #fff;
+  width: 100rpx;
+  height: 100rpx;
+}
+.chatBox .item .photo image{  
+  width: 100rpx;
+  height: 100rpx;
+}
+.chatBox .item .content{
+  display: flex;
+  max-width: 60%;
+  margin:0 20rpx; 
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+.chatBox .item .content.user{
+  background: #a7dcef;
+}
+.chatBox .item .content .text{
+  font-size: 32rpx;
+}
+.chatBox .item .content .img{
+  width: 100%;
+}
+.chatBox .item .content .img image{
+  max-width: 100%;
+}
+
+.area{ 
+ position: fixed; 
+ bottom: 150rpx; 
+ right: 40rpx; 
+ width: 60px; 
+ height: 60px; 
+ z-index: 100;  
+background: rebeccapurple
+}

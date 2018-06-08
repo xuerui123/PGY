@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='logo'>
+    <image src='http://192.168.1.215:3400/img/guanjia2.svg'></image>
+  </view>
+  <view class='box'>
+    <view class='account'>
+      <input placeholder-class="phcolor" placeholder='请输入Wi-Fi账号' value='{{account}}' bindinput='getaccount'></input>
+      <view class='iocn' bindtap='wifiList'></view>
+      <view class='list' wx:if='{{list.length!=0}}'>
+        <view wx:for='{{list}}' bindtap='choseWifi' data-str='{{item.SSID}}'>{{item.SSID}}</view>
+        
+      </view>
+    </view>
+    <view class='pwd' wx:if='{{pwdtype=="text"}}'>
+      <input placeholder-class="phcolor" placeholder='请输入Wi-Fi密码' type='{{pwdtype}}' bindinput='getPwd' value='{{pwd}}'></input>
+      <view class='iocn show' bindtap='hidPwd'></view>
+    </view>
+    <view class='pwd' wx:if='{{pwdtype=="password"}}'>
+      <input placeholder-class="phcolor" placeholder='请输入Wi-Fi密码' type='{{pwdtype}}' bindinput='getPwd' value='{{pwd}}'></input>
+      <view class='iocn hid' bindtap='hidPwd'></view>
+    </view>
+  </view>
+  <view class='prompt'>目前暂不支持5G频段Wi-Fi，请使用2.4G频段Wi-Fi</view>
+  <view class='next' bindtap='login'>下一步</view>
+  <view class='bottom'>
+    <view>PuGoing</view>
+    <view>让居家生活更加顺畅智能</view>
+  </view>
+</view>

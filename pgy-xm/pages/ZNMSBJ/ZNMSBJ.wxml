@@ -1,0 +1,63 @@
+<!--pages/ZNMSBJ/ZNMSBJ.wxml-->
+<view class='container'>
+    <view class='room'>
+      <view class='text'>报警</view>
+    </view>
+    <view class='record-list'>
+      <view class='box'>
+        <view class='item'>
+          <view class='title'>
+            <view class='text'>今天</view>
+            <view class='date'>4月10号</view>
+          </view>
+        </view>
+        <view class='item Bright' style='padding-top:0;'>
+          <view class='small'></view>
+        </view>
+        <view class='item Bright'>
+          <view class='big'></view>
+          <view class='text'>门锁异常报警</view>
+          <view class='line'></view>
+          <view class=''>19:26</view>
+        </view>
+        <view class='item Bright'>
+          <view class='big'></view>
+          <view class='text'>门锁异常报警</view>
+          <view class='line'></view>
+          <view class=''>19:26</view>
+        </view>
+        <view class='item Bright' style='padding-bottom:0;'>
+          <view class='small'></view>
+        </view>
+      </view>
+      <view class='box'>
+        <view class='item'>
+          <view class='title'>
+            <view class='text'>今天</view>
+            <view class='date'>4月10号</view>
+          </view>
+        </view>
+        <view class='item Bright' style='padding-top:0;'>
+          <view class='small'></view>
+        </view>
+        <view class='item Bright'>
+          <view class='big'></view>
+          <view class='text'>门锁异常报警</view>
+          <view class='line'></view>
+          <view class=''>19:26</view>
+        </view>
+        <view class='item Bright'>
+          <view class='big'></view>
+          <view class='text'>门锁异常报警</view>
+          <view class='line'></view>
+          <view class=''>19:26</view>
+        </view>
+        <view class='item Bright' style='padding-bottom:0;'>
+          <view class='small'></view>
+        </view>
+      </view>
+    </view>
+    <view class='delbtn' bindtap='delRecord'>
+      删除
+    </view>
+  </view>

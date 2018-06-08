@@ -1,0 +1,23 @@
+<!--pages/myfamily/myfamily.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item'>
+      <view class='photo'>        
+      </view>
+      <view class='text'>微信好1</view>
+      <view class='dele'>x</view>
+    </view>
+    <view class='item'>
+      <view class='photo'>        
+      </view>
+      <view class='text'>微信好1</view>
+      <view class='dele'>x</view>
+    </view>
+    <view class='item'>
+      <view class='photo'>        
+      </view>
+      <view class='text'>微信好1</view>
+      <view class='dele'>x</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+/* pages/user/user.wxss */
+
+page{
+  background: #efefef;
+  color: #9b9fac;
+}
+.iocn{
+  width: 50rpx;
+  height: 50rpx;
+  background: #eee;
+  margin-right: 20rpx;
+}
+.photo{
+  display: flex;
+  width: 100%;
+  background: #fff;    
+  align-items: center;
+  padding: 30rpx 0;
+  justify-content: space-between;
+}
+.photo .text{
+  display: flex;
+  margin-left: 30rpx;  
+}
+.photo .img{
+  display: flex;
+  align-items: center;
+  width: 200rpx;
+  height: 100rpx;
+  justify-content: space-between;
+}
+.photo image{
+  width: 100rpx;
+  height: 100rpx;
+  background: #eee;
+}
+
+.name{
+  background: #fff;
+  width: 100%;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+.name .text{
+  display: flex;
+  flex: 1;
+  padding: 30rpx 0;
+  padding-left: 30rpx;
+}
+.name .nick{
+  display: flex;
+  flex: 2;
+}
+.name .nick input{
+  width: 90%;
+  text-align: right;
+  color: #4b4fa3;
+  padding-right: 30rpx;
+}
+.btn{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  justify-content: center;
+  padding: 30rpx 0;
+  color: #3de4ff; 
+}
+.num{
+  display: flex;
+  width: 100%;
+  padding-left: 30rpx;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+}

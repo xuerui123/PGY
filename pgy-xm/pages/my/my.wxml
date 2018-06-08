@@ -1,0 +1,45 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+
+  <view class='photo' bindtap='goview' data-page='user'>
+    <view class='img'>
+      <image mode='widthFix' src='http://192.168.1.215:3400/img/userPhoto.svg'></image>
+    </view>
+    <view class='msg'>
+      <view class='name'>新福利</view>
+      <view class='status' style='font-size:28rpx;'>连接成功</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='item' bindtap='goview' data-page='index'>
+      <view class='iocn znpw'></view>
+      <view class='name'>配置联网</view>
+      <view class='iocn more'></view>
+    </view>
+    <view class='item' bindtap='goview' data-page='myfamily'>
+      <view class='iocn wdjr'></view>
+      <view class='name'>我的家人</view>
+      <view class='iocn more'></view>
+    </view>
+    <view class='item' bindtap='goview' data-page='myhome'>
+      <view class='iocn wdgj'></view>
+      <view class='name'>我的管家</view>
+      <view class='iocn more'></view>
+    </view>
+    <view class='item' bindtap='goview' data-page='myroom'>
+      <view class='iocn wdfj'></view>
+      <view class='name'>我的房间</view>
+      <view class='iocn more'></view>
+    </view>
+    <view class='item' bindtap='goview' data-page='clock'>
+      <view class='iocn wdnz'></view>
+      <view class='name'>我的闹钟</view>
+      <view class='iocn more'></view>
+    </view>
+    <view class='item' bindtap='goview' data-page='system'>
+      <view class='iocn gyxt'></view>
+      <view class='name'>关于系统</view>
+      <view class='iocn more'></view>
+    </view>
+  </view>
+</view>

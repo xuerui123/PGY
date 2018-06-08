@@ -1,0 +1,47 @@
+/* pages/myroom/myroom.wxss */
+page{
+  background: #efefef;
+}
+.list{
+  display: flex;
+  width: 100%;
+  flex-direction: column; 
+}
+.list .item{
+  display: flex;
+  width: 100%;  
+  background: #fff;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+  
+}
+.list .item .photo{
+  display: flex;
+  width: 60rpx;
+  height:60rpx;
+  background: url(http://192.168.1.215:3400/img/wdfj.svg) no-repeat center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.list .item .add{
+  display: flex;
+  width: 60rpx;
+  height:60rpx;
+  background: url(http://192.168.1.215:3400/img/jiahao.svg) no-repeat center;
+  background-size:69% auto; 
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.list .item .text{
+  display: flex;
+  flex-direction: column;
+  color: #9b9fac;
+  width: 75%;
+  font-size: 36rpx;
+}
+.list .item .dele{
+  display: flex;
+  width: 50rpx;
+  color: #9b9fac;
+}

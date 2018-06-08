@@ -1,0 +1,50 @@
+/* pages/myhome/myhome.wxss */
+page{
+  background: #efefef;
+}
+.list{
+  display: flex;
+  width: 100%;
+  flex-direction: column; 
+}
+.list .item{
+  display: flex;
+  width: 100%;
+  justify-content: center;  
+  background: #fff;
+  align-items: center;
+  padding: 30rpx 0;
+  
+}
+.list .item .home{
+  display: flex;
+  flex: 1;
+  
+}
+.list .item .text{
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  color: #9b9fac;
+}
+.list .item .text .name{
+  display: flex;
+  font-size: 32rpx;
+}
+.list .item .text .num{
+  font-size: 26rpx;
+}
+.list .item .key{
+  display: flex;
+  width: 50rpx;
+  height: 50rpx;
+  background: url(http://192.168.1.215:3400/img/key.svg) no-repeat center;
+  background-size:80% auto; 
+  margin-left: 30rpx;
+}
+.list .item .dele{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  
+}

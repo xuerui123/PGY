@@ -1,0 +1,95 @@
+/* pages/XFJ/XFJ.wxss */
+page{
+  background: #efefef;
+}
+.room{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+  
+}
+.room .text{
+  display: flex;
+  margin-left: 5%;
+}
+.room .iocn{
+  display: flex;
+  width: 80rpx;
+  height: 50rpx;  
+  margin-right: 5%;
+  background: url(http://192.168.1.215:3400/img/set.svg) no-repeat center;
+  background-size: auto 100% ;
+}
+.list{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.list .line{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.list .line .item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+}
+.list .line .item .btn{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  font-size: 32rpx;
+  height: 120rpx;
+  width:120rpx;
+  border-radius: 50%;    
+  margin: 50rpx;
+}
+.list .line .box{  
+  
+  text-align: center;   
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}
+.list .line .box.left .up{ 
+  border-radius: 50%;
+ }
+ .list .line .box.left .middle{ 
+    background:#efefef;
+ }
+ .list .line .box.left .down{ 
+  border-radius: 50%;
+ }
+.list .line .box .up{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+  height: 120rpx;
+  
+  background: #fff;
+  border-radius : 100rpx 100rpx 0 0;
+}
+.list .line .box .middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+  height: 100rpx;   
+  background: #fff;
+  border-radius : 0;
+}
+.list .line .box .down{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+  height: 120rpx;   
+  background: #fff;
+  border-radius : 0 0 100rpx 100rpx;
+}

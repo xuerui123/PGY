@@ -1,0 +1,64 @@
+<!--pages/CZ/CZ.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item'>
+      <view class='itemBox'>
+        <view class='up'>
+          <view class='iocn' bindtap='gopage' data-str='CZlist'>
+            <image mode='widthFix' src='http://192.168.1.215:3400/img/edit.svg'></image>
+          </view>
+        </view>
+        <view class='text'>两</view>
+        <view class='text'>孔</view>
+        <view class='text'>插</view>
+        <view class='text'>座</view>
+
+        <view class='chazuo'>
+          <image mode='aspectFill' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SmartPlug.svg'></image>
+        </view>
+      </view>
+
+    </view>
+    <view class='item'>
+      <view class='itemBox'>
+        <view class='up'>
+          <view class='iocn' bindtap='gopage' data-str='CZlist'>
+            <image mode='widthFix' src='http://192.168.1.215:3400/img/edit.svg'></image>          
+          </view>
+        </view>
+        <view class='text'>三</view>
+        <view class='text'>孔</view>
+        <view class='text'>插</view>
+        <view class='text'>座</view>
+        <view class='chazuo'>
+          <image mode='aspectFill' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/SmartPlug.svg'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='msg'>
+    <view class='item'>
+      <view class='title'>当日用电</view>
+      <view class='text'>0.00度</view>
+    </view>
+    <view class='item'>
+      <view class='title'>当日用电</view>
+      <view class='text'>0.00度</view>
+    </view>
+    <view class='item'>
+      <view class='title'>当日用电</view>
+      <view class='text'>0.00W</view>
+    </view>
+  </view>
+  <view class='btnList'>
+    <view class='item'>
+      <view class='btn'>开/关</view>
+    </view>
+    <view class='item'>
+      <view class='btn'>定时开</view>
+    </view>
+    <view class='item'>
+      <view class='btn'>定时关</view>
+    </view>
+  </view>
+</view>

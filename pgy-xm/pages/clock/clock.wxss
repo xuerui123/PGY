@@ -1,0 +1,71 @@
+/* pages/clock/clock.wxss */
+page{
+  background: #efefef
+}
+.noClock{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.noClock .clock{
+  display: flex;
+  justify-content: center;
+  margin-top: 30%;
+  margin-bottom: 50rpx;
+}
+.noClock image{
+  width: 180rpx;  
+}
+.noClock .list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.noClock .list view{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #9b9fac;
+  margin-bottom: 10rpx;
+}
+
+.clockList{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: #666;
+  background: #fff;
+  justify-content: center;
+}
+.clockList .item{
+  width: 90%;
+  padding: 30rpx 0;
+  display: flex;
+  margin-left: 5%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+}
+.clockList .item .msg{
+  display: flex;
+  flex: 7;
+   font-size: 32rpx; 
+  
+}
+.clockList .item .iocn{
+  display: flex;
+  flex:1;
+  justify-content: center;
+}
+.clockList .dele{
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  justify-content: center;
+  padding: 30rpx 0;
+  color: #1FB4FB;
+}

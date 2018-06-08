@@ -1,0 +1,3 @@
+<!--pages/animation/animation.wxml-->
+<text>pages/animation/animation.wxml</text>
+<view animation="{{animationData}}" style="background:#eee;height:100rpx;width:100rpx" bindtap='aaa'></view>

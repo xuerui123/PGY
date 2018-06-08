@@ -1,0 +1,58 @@
+/* pages/UserUp/UserUp.wxss */
+page{
+  background: #efefef;
+}
+.title{
+  display: flex;
+  font-size: 32rpx;
+  width: 90%;
+  margin: 20rpx 0;
+  color: #898787;
+}
+.text{
+  background: #fff;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+.text .zhankai{
+  display: flex;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 40rpx;
+  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+}
+.text input{
+  display: flex;
+  width: 80%;
+  margin-left: 5%;  
+  padding: 20rpx 0;
+}
+.text .list{
+  position: absolute;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  top: 96rpx;
+  background: #fff;
+  z-index: 10;
+}
+.text .list view{
+  display: flex;  
+  border-bottom: 1px solid #eee;
+  padding: 15rpx 0;
+  padding-left: 40rpx;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+  width: 150rpx;
+  height: 150rpx;
+  background: #fff;
+  border-radius: 50%;
+}

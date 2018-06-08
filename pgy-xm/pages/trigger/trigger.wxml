@@ -1,0 +1,85 @@
+<!--pages/trigger/trigger.wxml-->
+<view class="container">
+  <view class='top'>
+    <view class='help' bindtap='showHelp'></view>
+    <view class='title'>是否需要主人确认</view>
+    <view class='chose' bindtap='setStatus' data-obj='{{man}}'>{{man.status}}</view>
+  </view>
+
+  <view class='prompt'>选择事件</view>
+  <view class='search'>
+    <view class='box' bindtap='chooseSB'>
+      <view class='text'>
+        {{SBObj.dloca=='default'?'默认房间':SBObj.dloca}}{{SBObj.dname}}
+      </view>
+      <view class='iocn'></view>
+    </view>
+    <view class='list' wx:if='{{SBlistStatus}}'>
+      <view wx:for='{{SBlist}}' wx:key='index' bindtap='chooseSBobj' data-obj='{{item}}'>{{item.dloca=='default'?'默认房间':item.dloca}}{{item.dname}}</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='item' wx:if='{{evaList.open==1}}'>
+      <view class='text' bindtap='addCondition' data-str='打开'>打开</view>
+      <view class='status' bindtap='setStatus'>{{item.status}}</view>
+    </view>
+    <view class='item' wx:if='{{evaList.close==1}}'>
+      <view class='text' bindtap='addCondition' data-str='关闭'>关闭</view>
+      <view class='status' bindtap='setStatus'>{{item.status}}</view>
+    </view>
+    <view class='item' wx:if='{{evaList.move==1}}'>
+      <view class='text' bindtap='addCondition' data-str='人体活动'>人体活动</view>
+      <view class='status' bindtap='setStatus'>{{item.status}}</view>
+    </view>
+    <view class='item' wx:if='{{evaList.temH==1}}'>
+      <view class='text' bindtap='addCondition' data-str='温度高于' data-num='{{temH}}'>温度高于</view>
+      <view class='status' bindtap='chosetemperature' data-obj='{{temperature}}' data-str='temH'>{{temH}}</view>
+    </view>
+    <view class='item' wx:if='{{evaList.temL==1}}'>
+      <view class='text' bindtap='addCondition' data-str='温度低于' data-num='{{temL}}'>温度低于</view>
+      <view class='status' bindtap='chosetemperature' data-obj='{{temperature}}' data-str='temL'> {{temL}}</view>
+    </view>
+    <view class='item' wx:if='{{evaList.humH==1}}'>
+      <view class='text' bindtap='addCondition' data-str='湿度高于' data-num='{{humH}}'>湿度高于</view>
+      <view class='status' bindtap='chosetemperature' data-obj='{{humidity}}' data-str='humH'>{{humH}}</view>
+    </view>
+    <view class='item' wx:if='{{evaList.humL==1}}'>
+      <view class='text' bindtap='addCondition' data-str='湿度低于' data-num='{{humL}}'>湿度低于</view>
+      <view class='status' bindtap='chosetemperature' data-obj='{{humidity}}' data-str='humL'>{{humL}}</view>
+    </view>
+    <view class='item' wx:if='{{evaList.lumiH==1}}'>
+      <view class='text' bindtap='addCondition' data-str='光线过亮'>光线过亮</view>
+    </view>
+    <view class='item' wx:if='{{evaList.lumiL==1}}'>
+      <view class='text' bindtap='addCondition' data-str='光线过暗'>光线过暗</view>
+    </view>
+  </view>
+  <view class='prompt'>事件列表</view>  
+  <view class='conditionlist'>
+    <view class='item' wx:for='{{conditionlist}}' wx:key='index'>
+      <view class='text'>{{item.loca}}{{item.name}}{{item.str}}{{item.num?item.num:''}}</view>
+      <view class='del'>删除</view>
+    </view>
+  </view>
+  <view class='btn' bindtap='preserve'>保存</view>
+  <view class='showBG' wx:if='{{hideSatus}}' bindtap='hide'></view>
+  <view class="listpicker" wx:if='{{hideNum==1}}'>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='confirm'>
+      <picker-view-column style='text-align:center'>
+        <view wx:for="{{bottomList.statusList}}" wx:key="item" data-id='{{item}}' style="line-height: 50px;padding-left:10px;">{{item}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <modal hidden="{{hidden}}" title="帮助" confirm-text="确定" no-cancel="false" bindconfirm="showHelp">
+    <view>是否需要主人确认？</view>
+    <view>当选择 “是”</view>
+    <view>满足条件执行场景时，管家就会提示“需要执行***场景吗”</view>
+    <view>只有回答“需要/是的/执行”才会执行场景；</view>
+    <view>回答“不需要/不用/不执行”或者不回答，都不会执行场景。</view>
+    <view>如：你选择动作条件为客厅门磁打开</view>
+    <view>当管家检测到客厅门磁打开，就会说“需要打开***场景吗”</view>
+    <view>您只有回答“是的/需要/执行”，场景才会执行</view>
+    <view>当选择“否”，就不需要主人确认，只要满足条件就会直接执行场景</view>
+  </modal>
+</view>

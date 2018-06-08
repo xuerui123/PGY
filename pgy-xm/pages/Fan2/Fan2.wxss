@@ -1,0 +1,154 @@
+/* pages/FSoff/FSoff.wxss */
+
+page {
+  background: #efefef;
+}
+
+.room {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+}
+
+.room .text {
+  display: flex;
+  margin-left: 5%;
+}
+
+.room .iocn {
+  display: flex;
+  width: 80rpx;
+  height: 50rpx;  
+  margin-right: 5%;
+  background: url(http://192.168.1.215:3400/img/set.svg) no-repeat center;
+  background-size: auto 100% ;
+}
+.SBpanel{
+  display: flex;
+  width: 100%;
+  background: #fff;
+}
+.SBpanel view{
+  padding: 20rpx;
+  padding-left: 30rpx;
+}
+.study{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+  
+}
+.study view{  
+  display: flex;
+  width: 150rpx;
+  justify-content: center;
+}
+.list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list .item {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin-top: 60rpx;
+}
+
+.list .item .btn {
+  display: flex;
+  width: 130rpx;
+  height: 130rpx;
+  padding: 10rpx;
+  background: #fff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.list .item .btn.active {
+  background: #3de4ff;
+}
+.list .item .btn.studyBtn{
+  color: #dddedf;
+  border: 1px solid #fff;
+}
+.list .item .btn.finish{
+  color: #000;
+  border: 1px solid #fff;
+}
+action-sheet-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+  padding: 30rpx 0;
+}
+action-sheet-item .more{
+  width: 40rpx;
+  height: 40rpx;
+  background: url(http://192.168.1.215:3400/img/right.svg) no-repeat center;
+  background-size: 580% auto;
+}
+
+.showBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.listpicker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #eee;
+  z-index: 100;
+}
+
+.listheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #fff;
+  padding: 20rpx 0;
+}
+
+.list-true {
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+
+.list-hide {
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+
+.list-title {
+  display: flex;
+  justify-content: center;
+  font-size: 38rpx;
+  flex: 3;
+}

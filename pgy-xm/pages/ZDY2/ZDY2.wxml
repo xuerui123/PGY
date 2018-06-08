@@ -1,0 +1,51 @@
+<!--pages/ZDY2/ZDY2.wxml-->
+<view class='container'>
+  <view class='room'>
+    <view class='text'>按键学习</view>
+    
+  </view>
+  <view class='choseBox'>
+    <view class='set'>
+      <view class='signal'>
+        <view class='title'>
+          <view>信号类别</view>
+        </view>
+        <view class='signalList'>
+          <view class='item'>
+            <view class='text'>红外设备</view>
+            <view class='iocn {{pt==1?"active":""}}' data-pt='1' bindtap='choosePT'>
+            </view>
+          </view>
+          <view class='item'>
+            <view class='text'>433射频</view>
+            <view class='iocn {{pt==2?"active":""}}' data-pt='2' bindtap='choosePT'></view>
+          </view>
+          <view class='item'>
+            <view class='text'>315射频</view>
+            <view class='iocn {{pt==3?"active":""}}' data-pt='3' bindtap='choosePT'></view>
+          </view>
+        </view>
+
+      </view>
+      <view class='voice'>
+        <view class='title'>语音命令</view>
+        <view class='writeBox'>
+          <input placeholder='请输入语音命令' placeholder-class='phcolor' bindinput='command'></input>
+        </view>
+      </view>
+      <view class='studyOnes'>
+        <view>单键学习</view>
+        <view class='iocn {{isgru==0?"active":""}}' data-isgru='0' bindtap='chooseIsgru'></view>
+      </view>
+      <view class='studyMore'>
+        <view>组合键学习</view>
+        <view class='iocn {{isgru==1?"active":""}}' data-isgru='1' bindtap='chooseIsgru'></view>
+      </view>
+    </view>
+    <view class='btnBox'>
+      <view class='btn' bindtap='goBack'>
+        开始学习
+      </view>      
+    </view>
+  </view>
+</view>  

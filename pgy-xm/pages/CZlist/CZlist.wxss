@@ -1,0 +1,84 @@
+/* pages/CZlist/CZlist.wxss */
+page{
+  background: #efefef;
+}
+view{
+  box-sizing: border-box;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 95%;
+}
+.list .item {
+  display: flex;
+  width: 237.5rpx;
+  height: 237.5rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.list .item .box {
+  display: flex;
+  flex-direction: column;
+  width: 205rpx;
+  height: 205rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.list .item .img{
+  display: flex;
+  max-height: 110rpx;
+  margin-left: 20rpx;
+}
+.list .item image {
+  width:100rpx;    
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.list .item .box .name {
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #595757;
+}
+.list .item .new{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list .item .new .name{
+  font-size: 38rpx;
+}
+.equipmentName{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  margin-top: 50rpx;
+}
+.equipmentName input{
+  width: 90%;
+  padding: 20rpx 0;
+}
+.prompt{
+  display: flex;
+  width: 90%;
+  color: #aaa;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  margin-bottom: 120rpx;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+  padding: 30rpx 0;
+  z-index: 10;
+  color: #3de4ff;
+}

@@ -1,0 +1,21 @@
+/* pages/system/system.wxss */
+page{
+  background: #efefef;
+}
+.list{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.list .item{
+  display: flex;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx 0;
+  font-size: 36rpx;
+  color: #9b9fac;
+}
+.list .item .iocn{
+  width: 100rpx;  
+}

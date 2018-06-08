@@ -1,0 +1,161 @@
+/* pages/RTCGQ/RTCGQ.wxss */
+page{
+  background: #efefef;
+}
+.room,.cheked{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.cheked .text{
+  display: flex;
+  margin:0 5%;
+}
+.room .text{
+  display: flex;
+  margin-left: 5%;
+}
+.room .iocn{
+  display: flex;
+  width: 80rpx;
+  height: 50rpx;  
+  margin-right: 5%;
+  background: url(http://192.168.1.215:3400/img/set.svg) no-repeat center;
+  background-size: auto 100% ;
+}
+.box{
+  margin-top: 40rpx;
+}
+.list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.list .item{
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  align-items: center;
+  
+}
+.list .item .title{
+  display: flex;
+  width: 100%;
+  margin-bottom: 30rpx;
+  justify-content: space-between;
+  
+}
+.list .item .small{
+  position: absolute;
+  left: -10rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: #999;
+  border-radius: 50%;
+}
+.list .item .big{
+  position: absolute;
+  left: -15rpx;
+  width: 30rpx;
+  height: 30rpx;
+  background: #999;
+  border-radius: 50%;
+}
+.list .item.Bright{
+  width: 88%;
+  margin-left: 7%;
+  border-left: 1px solid #999;
+  position: relative;
+  padding: 20rpx 0;
+}
+.list .item.Bright .text{
+  margin-left: 40rpx;
+}
+.list .item.Bright .line{
+  border-left: 3px solid #3de4ff;
+  height: 30rpx;
+  margin-left: 150rpx;
+  margin-right: 50rpx;
+}
+.btn{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  justify-content: center;
+  padding: 30rpx 0;
+}
+action-sheet-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+  padding: 30rpx 0;
+}
+action-sheet-item .more{
+  width: 40rpx;
+  height: 40rpx;
+  background: url(http://192.168.1.215:3400/img/right.svg) no-repeat center;
+  background-size: 580% auto;
+}
+.showBG{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.listpicker{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  background: #eee;
+  z-index: 100;
+}
+.listheader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  border-top: 1px solid #eee;
+  border-bottom:1px solid #eee;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #fff;
+  padding: 20rpx 0;
+}
+.list-true{
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+.list-hide{
+  display: flex;
+  font-size: 34rpx;
+  justify-content: center;
+  flex: 1;
+}
+.list-title{ 
+  display: flex;
+  justify-content: center;
+  font-size: 38rpx;
+  flex: 3; 
+}
+.HostName{
+  border-bottom: 1px solid #666;
+  font-size: 36rpx;
+  padding: 10rpx 0;
+  padding-left: 10rpx;
+  margin-bottom: 30rpx;
+}

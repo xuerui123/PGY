@@ -1,0 +1,97 @@
+/* pages/sceneSet/sceneSet.wxss */
+page{
+  background: #efefef;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.top .topBox {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: center;
+  color: #9b9fac
+}
+
+.top .text {
+  display: flex;
+  flex: 1;
+  padding: 30rpx 0;
+  font-size: 34rpx;  
+}
+
+.top .name {
+  display: flex;
+  flex: 2;
+  padding: 30rpx 0;  
+  font-size: 34rpx;
+}
+
+.makeToMe{
+  display: flex;
+  margin-top: 30rpx;
+  background: #fff;
+  width: 100%;
+  justify-content: center;
+  padding: 20rpx 0; 
+}
+.makeToMe input{
+  width: 90%;
+  font-size: 34rpx;
+}
+.prompt{
+  display: flex;
+  width: 90%;
+  font-size: 28rpx;
+  color: #6a6a6a;
+  margin-top: 20rpx;
+}
+.list{
+  display: flex; 
+  width: 90%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+.list view{
+  display: flex;
+  width: 40%;
+  margin-top: 30rpx;
+  justify-content: center;
+  background: #fff;
+  font-size: 34rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+.list view text{
+  color: #1FB4FB;
+  
+}
+.time{
+  display: flex;
+  width: 100%;
+  margin-top: 100rpx;
+  justify-content: center;
+  background: #fff;
+}
+.time input{
+  width: 90%;
+  font-size: 34rpx;
+  padding: 15rpx 0;
+}
+.btn{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  color: #1FB4FB;
+  display: flex;
+  justify-content: center;
+  padding: 30rpx 0;
+}

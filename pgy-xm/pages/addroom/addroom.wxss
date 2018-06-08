@@ -1,0 +1,48 @@
+/* pages/addroom/addroom.wxss */
+page{
+  background: #efefef;
+}
+.top{
+  display: flex;
+  width: 100%;
+  background: #fff;
+  padding: 30rpx 0;
+  justify-content: center;
+}
+.top input{
+  display: flex;
+  width: 90%;
+  color: #9b9fac;
+}
+.list {
+  display: flex;
+  width: 90%;
+  margin-top: 30rpx;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list view{
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  margin: 20rpx 0;
+}
+.list view text{
+  background: #ccc;
+  color: #fff;
+  font-size: 28rpx;
+  width: 90%;
+  text-align: center;
+  border-radius: 20rpx;
+  padding: 5rpx 0;
+}
+.btn{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  background: #ccc;
+  color: #fff;
+  padding: 30rpx 0;
+}

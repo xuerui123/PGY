@@ -1,0 +1,60 @@
+/* pages/list/list.wxss */
+page{
+  background: #efefef;
+}
+.search{
+  display: flex;
+  width: 95%;
+  background: #fff;
+  border-radius: 10rpx;
+  align-items: center;
+}
+.search .iocn{
+  display: flex;
+  width: 10%;  
+  height: 50rpx;
+  background: url(http://192.168.1.215:3400/img/search.svg) no-repeat center;
+  background-size:60% auto; 
+}
+.search input{
+  width: 70%;
+  padding: 20rpx 0;
+  padding-left: 10rpx;
+  font-size: 32rpx;
+}
+.search .text{
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  font-size: 32rpx;
+  border-left: 2rpx solid #eee;
+  color: #898787;
+}
+.nav{
+  display: flex;
+  width: 95%;
+}
+.nav view{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  color: #666;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}
+.nav view.active{
+  border-bottom: 1px solid #666 
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+}
+.list view{
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee;
+}

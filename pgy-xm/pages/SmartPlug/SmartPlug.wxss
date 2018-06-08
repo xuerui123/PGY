@@ -1,0 +1,88 @@
+/* pages/CZ/CZ.wxss */
+page{
+  background: #efefef;
+}
+.list{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+.list .item{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.itemBox{
+  display: flex;
+  flex-direction: column;
+  width: 130rpx;
+  margin-top: 40rpx;
+  justify-content: center;
+}
+.list .item .up{
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+}
+.list .item view{
+  display: flex;
+  justify-content: center;  
+}
+.list .item .iocn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60rpx;
+  height: 60rpx;
+  background: #fff;
+  border-radius: 50%;
+}
+.list .item .iocn image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.msg{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.msg .item{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.msg .item view{
+  display: flex;
+  justify-content: center;
+}
+.btnList{
+  display: flex;
+  width: 100%;
+  margin-top: 100rpx;
+  flex-direction: row;
+}
+.btnList .item{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  width: 130rpx;
+  height: 130rpx;
+}
+.chazuo{
+  width: 130rpx;
+  height: 130rpx;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.chazuo image{
+  width: 130rpx;
+  height: 130rpx;
+}

@@ -1,0 +1,86 @@
+<!--pages/KGlist/KGlist.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item'>
+      <view class='box {{name=="吊灯"?"active":""}}' data-str='吊灯' bindtap='chose' data-logo='Chandelier.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Chandelier.svg'></image>
+        </view>
+        <view class='name'>吊灯</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="灯带"?"active":""}}' data-str='灯带' bindtap='chose' data-logo='LampStrip.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/LampStrip.svg'></image>
+        </view>
+        <view class='name'>灯带</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="顶灯"?"active":""}}' data-str='顶灯' bindtap='chose' data-logo='OverheadLight.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/OverheadLight.svg'></image>
+        </view>
+        <view class='name'>顶灯</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="射灯"?"active":""}}' data-str='射灯' bindtap='chose' data-logo='ShootTheLight.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/ShootTheLight.svg'></image>
+        </view>
+        <view class='name'>射灯</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="吊灯多"?"active":""}}' data-str='吊灯多' bindtap='chose' data-logo='ChandelierMore.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/ChandelierMore.svg'></image>
+        </view>
+        <view class='name'>吊灯多</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="日光灯"?"active":""}}' data-str='日光灯' bindtap='chose' data-logo='DaylightLamp.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/DaylightLamp.svg'></image>
+        </view>
+        <view class='name'>日光灯</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="壁灯"?"active":""}}' data-str='壁灯' bindtap='chose' data-logo='WallLamp.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/WallLamp.svg'></image>
+        </view>
+        <view class='name'>壁灯</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="灯光"?"active":""}}' data-str='灯光' bindtap='chose' data-logo='Lamp.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Lamp.svg'></image>
+        </view>
+        <view class='name'>灯光</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box {{name=="排风扇"?"active":""}}' data-str='排风扇' bindtap='chose' data-logo='ExhaustFan.svg'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/ExhaustFan.svg'></image>
+        </view>
+        <view class='name'>排风扇</view>
+      </view>
+    </view>     
+  </view>
+  <view class='equipmentName'>
+    <input placeholder='请输入您想给设备取的名字' placeholder-class='phcolor' bindinput='diyName' value='{{name}}'></input>
+  </view>
+  <view class='prompt'>
+    不能输入字母、空格或者符号（最多5个字）
+  </view>
+  <view class='btn' bindtap='conserve'>
+    确认
+  </view>
+</view>

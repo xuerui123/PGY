@@ -1,0 +1,53 @@
+/* pages/fail/fail.wxss */
+page{
+  background: #efefef;
+}
+.top{
+  margin-top: 70rpx;
+  color: #666;
+  font-size:42rpx; 
+}
+.img{
+  margin: 50rpx 0;
+  width: 400rpx;
+  height: 400rpx;
+  background: #fff;
+  border-radius: 50%;
+}
+.msg {
+  display: flex;
+  flex-direction: column;
+  color: #666;
+}
+.msg .title{
+  margin-bottom: 30rpx;
+}
+.msg .list{
+  color: #999;
+  font-size: 32rpx;
+}
+.msg .list view{
+  margin-bottom: 10rpx;
+}
+.operation{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.operation view{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.operation .repeat{
+  background: #a7dcef;
+  color: #fff;
+  padding: 30rpx 80rpx;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}
+.operation .more{
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  color: #a7dcef;
+}

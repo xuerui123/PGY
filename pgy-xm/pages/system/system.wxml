@@ -1,0 +1,14 @@
+<!--pages/system/system.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item'>
+      <view class='iocn'></view>
+      <view class='text'>硬件版本1.06</view>
+    </view>    
+    <view class='item'>
+      <view class='iocn'></view>
+      <view class='text'>软件件版本1.11</view>
+    </view>
+  </view>
+  
+</view>

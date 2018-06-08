@@ -1,0 +1,26 @@
+<!--pages/clock/clock.wxml-->
+<view class="container">
+  <view class='noClock' wx:if='{{clockList.length==0}}'>
+    <view class='clock'>
+      <image src='http://192.168.1.215:3400/img/clock.png' mode='widthFix'>
+      </image>
+    </view>
+    <view class='list'>
+      <view>您还没有闹钟哦</view>
+      <view>为您推荐语音命令</view>
+      <view>"明天早上7点提醒我起床"</view>
+      <view>"每天下午4点提醒我接小宝放学"</view>
+    </view>
+  </view>
+  <view class='clockList' wx:for='{{clockList}}' wx:key='index'>
+    <view class='item'>
+      <view class='msg' bindtap='deleOnes' data-obj='{{item}}'>
+        {{item.name}}：{{item.text}}
+      </view>      
+      <view class='iocn' bindtap='deleOnes' data-obj='{{item}}'>x</view>
+    </view>
+    <view class='dele' bindtap='deleAll'>
+      删除所有
+    </view>
+  </view>
+</view>

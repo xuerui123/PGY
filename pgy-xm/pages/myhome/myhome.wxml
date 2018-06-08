@@ -1,0 +1,13 @@
+<!--pages/myhome/myhome.wxml-->
+<view class="container">
+  <view class='list'>
+    <view class='item'>
+      <view class='home'></view>
+      <view class='text'>
+        <view class='name'>新福利<view class='key'></view></view>
+        <view class='num'>SN:8789787987</view>
+      </view>
+      <view class='dele'>x</view>
+    </view>
+  </view>
+</view>

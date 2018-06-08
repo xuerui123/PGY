@@ -1,0 +1,70 @@
+<!--pages/RSQ/RSQ.wxml-->
+<view class='container'>
+  <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
+    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+      <view class='text' style='width:250rpx;'>学习模式</view>
+      <view class='text' bindtap='Qstudy'>保存</view>
+    </view>
+  <view class='SBpanel' wx:if='{{SBtype=="choose"}}'><view>{{brand}}{{name}}({{SBpanel}}/{{list.length}})</view></view>
+  <view class='list'>
+    <view class='item'>
+      <view class='btnBox'>
+        <view class='btn {{studyList.R_POWER==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="R_POWER"?"active":""}}' data-key='R_POWER' bindtap='action'>开/关</view>
+      </view>
+      <view class='btnBox'>
+        <view class='btn {{studyList.R_MODE==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="R_MODE"?"active":""}}' data-key='R_MODE' bindtap='action'>模式</view>
+      </view>
+      <view class='btnBox'>
+        <view class='btn {{studyList.R_TIME==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="R_TIME"?"active":""}}' data-key='R_TIME' bindtap='action'>定时</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='btnBox'>
+          <view class='up {{studyList.R_Tup==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="R_Tup"?"active":""}}' data-key='R_Tup' bindtap='action'>+</view>
+        </view>
+        <view class='btnBox'>
+          <view class='middle'>温度</view>
+        </view>
+        <view class='btnBox'>
+          <view class='down {{studyList.R_Tdown==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="R_Tdown"?"active":""}}' data-key='R_Tdown' bindtap='action'>-</view>
+        </view>
+      </view>
+      <view class='btnBox'>
+        <view class='btn {{studyList.R_AK1==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="R_AK1"?"active":""}}' data-key='R_AK1' bindtap='action' style='flex-direction: column' >
+          <view>{{AK1[0]?AK1[0]:"+"}}{{AK1[1]?AK1[1]:""}}</view>
+          <view>{{AK1[2]?AK1[2]:""}}{{AK1[3]?AK1[3]:""}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changType'>
+      <view>学习模式</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>        
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

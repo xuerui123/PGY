@@ -1,0 +1,101 @@
+/**index.wxss**/
+page{
+  background: #efefef
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.logo{
+  margin: 20rpx;
+  margin-top: 50rpx;
+  display: flex;
+}
+.logo image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.box{
+  margin-top: 30rpx;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.account,.pwd{
+  display: flex;
+  flex: 1;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #999;
+  position: relative;
+  font-size: 34rpx;
+}
+input{
+  padding-left: 10rpx;
+  width: 80%
+}
+.phcolor{
+  color: #aaa
+}
+.iocn{
+  position: absolute;
+  right: 10rpx;
+  width: 80rpx;
+  height:80rpx;
+}
+.account .iocn{
+  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat center;
+}
+.pwd .show{
+  background: url(http://192.168.1.215:3400/img/chakan.svg) no-repeat center;
+}
+.pwd .hid{
+  background: url(http://192.168.1.215:3400/img/chakan1.svg) no-repeat center;
+}
+.prompt{
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  color: #858c96;
+}
+.next{
+  background: #a7dcef;
+  color: #fff;
+  margin-top: 30rpx;
+  padding: 30rpx 90rpx;
+  border-radius: 10rpx;
+}
+.bottom{
+  position: absolute;
+  bottom: 40rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bottom view{
+  display: flex;
+  margin-top: 10rpx;
+  justify-content: center;
+  color: #858c96;
+  font-size: 32rpx;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 90rpx;
+  left: 0rpx;
+  background: #fff;
+  width: 100%;
+  z-index: 10;
+  height: 200px;
+  overflow: auto;
+}
+.list view{
+  border-bottom: 1px solid #eee;
+  padding-top:15rpx; 
+  padding-bottom:15rpx;
+  padding-left: 10rpx;
+  font-size: 36rpx;
+  color: #555;
+}

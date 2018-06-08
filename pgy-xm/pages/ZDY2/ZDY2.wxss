@@ -1,0 +1,143 @@
+/* pages/ZDY2/ZDY2.wxss */
+/* pages/ZDY/ZDY.wxss */
+page{
+  background: #efefef;
+}
+.room{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+  
+}
+.room .text{
+  display: flex;
+  margin-left: 5%;
+}
+.room .iocn{
+  display: flex;
+  width: 80rpx;
+  height: 50rpx;  
+  margin-right: 5%;
+  background: url(http://192.168.1.215:3400/img/set.svg) no-repeat center;
+  background-size: auto 100% ;
+}
+.choseBox{
+  display: flex;
+  width: 100%;
+}
+.choseBox .set{
+  display: flex;
+  width: 100%;  
+  flex-direction: column;
+}
+.choseBox .set .signal{
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  flex-direction: row;
+}
+.choseBox .set .signal .title{
+  display: flex;
+  flex: 2;
+  padding-top: 20rpx;
+  
+}
+.choseBox .set .signal .signalList{
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+}
+.choseBox .set .signal .signalList .item{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding: 20rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.choseBox .set .signal .signalList .item .text{
+  display: flex;
+  width: 300rpx
+}
+.choseBox .set .signal .signalList .item .iocn{
+  display: flex;
+  background: url(http://192.168.1.215:3400/img/xuanqu.svg) no-repeat center;
+  background-size:auto 100%; 
+  width: 40rpx;
+  height: 40rpx;
+}
+.choseBox .set .signal .signalList .item .iocn.active{
+  background: url(http://192.168.1.215:3400/img/xuanqu1.svg) no-repeat center;
+  background-size:auto 100%; 
+}
+
+.voice{
+  margin-top: 40rpx;
+}
+.voice .title{
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 10rpx;
+}
+.voice .writeBox{
+  width: 100%;
+  background: #fff;
+}
+.voice .writeBox input{
+  width: 90%;
+  margin-left: 5%;
+  padding: 20rpx 0; 
+}
+.studyOnes ,.studyMore {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50rpx;
+}
+.studyOnes .iocn{
+  display: flex;
+  background: url(http://192.168.1.215:3400/img/xuanqu.svg) no-repeat center;
+  background-size:auto 100%; 
+  width: 40rpx;
+  height: 40rpx;
+}
+.studyOnes .iocn.active{  
+  background: url(http://192.168.1.215:3400/img/xuanqu1.svg) no-repeat center;
+  background-size:auto 100%;   
+}
+.studyMore .iocn{
+  display: flex;
+  background: url(http://192.168.1.215:3400/img/xuanqu.svg) no-repeat center;
+  background-size:auto 100%; 
+  width: 40rpx;
+  height: 40rpx;
+}
+.studyMore .iocn.active{  
+  background: url(http://192.168.1.215:3400/img/xuanqu1.svg) no-repeat center;
+  background-size:auto 100%;   
+}
+.choseBox .btnBox{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 200rpx;  
+}
+.choseBox .btnBox .btn{
+  display: flex;
+  width: 100rpx;
+  height: 100rpx;
+  padding: 20rpx;
+  border-radius: 50%;
+  flex-direction: column;
+  text-align: center; 
+  align-items: center;
+  background: #fff;
+}

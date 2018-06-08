@@ -1,0 +1,98 @@
+<!--pages/RTCGQ/RTCGQ.wxml-->
+<view class='container'>
+  <view class='room'>
+    <view class='text'>默认房间</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='cheked'>
+    <view class='text'>检测时间</view>
+    <view class='text'>5秒</view>
+  </view>
+  <view class='list'>
+    <view class='box'>
+      <view class='item'>
+        <view class='title'>
+          <view class='text'>今天</view>
+          <view class='date'>4月10号</view>
+        </view>
+      </view>
+      <view class='item Bright' style='padding-top:0;'>
+        <view class='small'></view>
+      </view>
+      <view class='item Bright'>
+        <view class='big'></view>
+        <view class='text'>检测到人体活动</view>
+        <view class='line'></view>
+        <view class=''>19:26</view>
+      </view>
+      <view class='item Bright'>
+        <view class='big'></view>
+        <view class='text'>检测到人体活动</view>
+        <view class='line'></view>
+        <view class=''>19:26</view>
+      </view>
+      <view class='item Bright' style='padding-bottom:0;'>
+        <view class='small'></view>
+      </view>
+    </view>
+    <view class='box'>
+      <view class='item'>
+        <view class='title'>
+          <view class='text'>今天</view>
+          <view class='date'>4月10号</view>
+        </view>
+      </view>
+      <view class='item Bright' style='padding-top:0;'>
+        <view class='small'></view>
+      </view>
+      <view class='item Bright'>
+        <view class='big'></view>
+        <view class='text'>检测到人体活动</view>
+        <view class='line'></view>
+        <view class=''>19:26</view>
+      </view>
+      <view class='item Bright'>
+        <view class='big'></view>
+        <view class='text'>检测到人体活动</view>
+        <view class='line'></view>
+        <view class=''>19:26</view>
+      </view>
+      <view class='item Bright' style='padding-bottom:0;'>
+        <view class='small'></view>
+      </view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changeTime'>
+      <view>修改检测间隔</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <modal hidden="{{timeShow}}" confirm-text="提交" cancel-text="取消" bindcancel="timeCancel" bindconfirm="timeConfirm" style='background:#efefef;'>   
+    <input class='HostName' type='text'placeholder="请输入检测间隔时间" placeholder-class='phcolor' bindinput='hostName'/>      
+    <text>检测间隔时间，最多不超过60秒</text>
+  </modal>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+       <view bindtap="open" class="list-hide">关闭</view> 
+       <view class='list-title'></view> 
+       <view bindtap="open" class="list-true">确认</view> 
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='confirm'>
+      <picker-view-column style='text-align:center'>
+        <view wx:for="{{roomList}}" wx:key="item" data-id='{{item}}' style="line-height: 50px;padding-left:10px;">{{item}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <view class='btn' bindtap='delRecord'>
+    删除
+  </view>
+</view>

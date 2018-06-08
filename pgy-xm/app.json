@@ -1,0 +1,100 @@
+{
+  "pages": [        
+    "pages/my/my",    
+    "pages/trigger/trigger",      
+    "pages/Lamp/Lamp",    
+    "pages/equipment/equipment",
+    "pages/addEquipment/addEquipment",        
+    "pages/animation/animation",       
+    "pages/SmartPlug/SmartPlug",
+    "pages/Curtain/Curtain",
+    "pages/QMKG/QMKG",
+    "pages/Camera/Camera",    
+    "pages/third/third",               
+    "pages/DIY/DIY",
+    "pages/TV/TV",
+    "pages/ZDY2/ZDY2",        
+    "pages/list/list",    
+    "pages/XFJ/XFJ",
+    "pages/YB/YB",                
+    "pages/UserUp/UserUp",
+    "pages/myroom/myroom",
+    "pages/addroom/addroom",
+    "pages/myhome/myhome",
+    "pages/scene/scene",    
+    "pages/home/home",
+    "pages/Humidifier/Humidifier",      
+    "pages/VoiceExtension/VoiceExtension",    
+    "pages/STB/STB",
+    "pages/AirConditioning/AirConditioning",
+    "pages/NetworkBox/NetworkBox",
+    "pages/Projector/Projector",    
+    "pages/AirPurifier/AirPurifier",
+    "pages/WaterHeater/WaterHeater",
+    "pages/SweepingRobot/SweepingRobot",    
+    "pages/ZNMSJL/ZNMSJL",
+    "pages/ZNMSBJ/ZNMSBJ",
+    "pages/IntelligentButler/IntelligentButler",
+    "pages/DoorwindowSensor/DoorwindowSensor",
+    "pages/RTCGQ/RTCGQ",
+    "pages/Fan1/Fan1",
+    "pages/Fan2/Fan2",
+    "pages/CZlist/CZlist",
+    "pages/KGlist/KGlist",
+    "pages/SwitchOne/SwitchOne",    
+    "pages/PowerAmplifier/PowerAmplifier",
+    "pages/DoorLock/DoorLock",
+    "pages/dome/dome",
+    "pages/index/index",
+    "pages/clock/clock",           
+    "pages/user/user",
+    "pages/system/system",
+    "pages/myfamily/myfamily",    
+    "pages/second/second",    
+    "pages/establish/establish",
+    "pages/timing/timing",
+    
+    "pages/speak/speak",
+    "pages/sceneSet/sceneSet",
+    "pages/fail/fail",    
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#efefef",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9b9fac",
+    "selectedColor": "#3de4ff",
+    "backgroundColor": "#fcfcfc",
+    "borderStyle": "#666",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/image/hm.png",
+        "selectedIconPath": "/image/hm1.png"
+      },
+      {
+        "pagePath": "pages/equipment/equipment",
+        "text": "设备",
+        "iconPath": "/image/eq.png",
+        "selectedIconPath": "/image/eq1.png"
+      },
+      {
+        "pagePath": "pages/scene/scene",
+        "text": "场景",
+        "iconPath": "/image/sc.png",
+        "selectedIconPath": "/image/sc1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/image/my.png",
+        "selectedIconPath": "/image/my1.png"
+      }
+    ]
+  }
+}

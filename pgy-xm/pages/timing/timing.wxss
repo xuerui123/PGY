@@ -1,0 +1,113 @@
+/* pages/timing/timing.wxss */
+page{
+  background: #efefef;
+}
+.title{
+  display: flex;
+  width: 90%;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+  color: #666;
+}
+.time{
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+  padding: 20rpx 0;
+  font-size: 44rpx; 
+}
+.list{
+  background: #fff;
+  display: flex;
+  width: 100%;
+  flex-direction: column;  
+  justify-content: center;
+  padding-bottom: 30rpx;
+}
+.list .item{  
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  align-items: center;
+}
+.list .item .text{
+  display: flex;
+  flex-direction: row;
+}
+.list .item .text .help{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 30rpx;
+  background: url(http://192.168.1.215:3400/img/help.svg) no-repeat center;
+  background-size:100% auto; 
+}
+.iocn{
+  background: url(http://192.168.1.215:3400/img/xuanqu.svg) no-repeat center;
+  background-size:auto 100%; 
+  width: 40rpx;
+  height: 40rpx;
+}
+.iocn.active{
+   background: url(http://192.168.1.215:3400/img/xuanqu1.svg) no-repeat center;
+  background-size:auto 100%; 
+}
+
+.show {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.huise {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10%;
+  background: #fff;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+}
+.huise .week{
+  display: flex;
+  width: 90%;
+  justify-content:space-between;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+.huise .chose{
+  display: flex;
+  flex-direction: row; 
+  margin: 30rpx 0;
+}
+.huise .chose view{
+  display: flex;
+  justify-content: center;
+  margin-left: 30rpx;
+  width: 150rpx;
+  border: 1px solid #eee;
+  padding: 10rpx 0;
+  border-radius: 10rpx; 
+}
+.btn{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  color: #1FB4FB;
+  display: flex;
+  justify-content: center;
+  padding: 30rpx 0;
+}

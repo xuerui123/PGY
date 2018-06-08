@@ -1,0 +1,78 @@
+/* pages/my/my.wxss */
+page{
+  background: #efefef;
+}
+.photo{
+  background: #fff;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.photo .img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-left: 40rpx;
+}
+.photo image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.photo .msg{
+  margin-left: 40rpx;
+  color: #9b9fac;
+}
+.list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.list .item{
+  display: flex;
+  align-items: center; 
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 30rpx 0;
+  color: #9b9fac;
+  font-size: 32rpx;
+}
+.list .item .name{
+  display: flex;
+  flex: 6   
+}
+.list .item .iocn{
+  display: flex;
+  flex: 1; 
+  width: 40rpx;
+  height: 40rpx;
+}
+.iocn.znpw{
+  background: url(http://192.168.1.215:3400/img/znpw.svg) no-repeat center;
+  background-size:100% auto;
+}
+.iocn.wdjr{
+  background: url(http://192.168.1.215:3400/img/wdjr.svg) no-repeat center;
+  background-size:100% auto;
+}
+.iocn.wdgj{
+  background: url(http://192.168.1.215:3400/img/wdgj.svg) no-repeat center;
+  background-size:100% auto;
+}
+.iocn.wdfj{
+  background: url(http://192.168.1.215:3400/img/wdfj.svg) no-repeat center;
+  background-size:100% auto;
+}
+.iocn.wdnz{
+  background: url(http://192.168.1.215:3400/img/clock.png) no-repeat center;
+  background-size: auto 100%;
+}
+.iocn.gyxt{
+  background: url(http://192.168.1.215:3400/img/gyxt.svg) no-repeat center;
+  background-size:100% auto;
+}
+.iocn.more{
+  background: url(http://192.168.1.215:3400/img/right.svg) no-repeat center;
+  background-size:180% auto;
+}

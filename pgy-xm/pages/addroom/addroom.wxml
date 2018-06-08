@@ -1,0 +1,14 @@
+<!--pages/addroom/addroom.wxml-->
+<view class='container'>
+  <view class='top'>
+    <input placeholder='请输入房间名' placeholder-class='phcolor' value='{{roomName}}' bindinput='setRoomName'></input>
+  </view>
+  <view class='list'>
+    <view class='item' wx:for='{{roomList}}' wx:key='index' data-str='{{item}}' bindtap='choseRoom'>
+      <text>{{item}}</text>
+    </view>    
+  </view>
+  <view class='btn' bindtap='add'>
+    保存
+  </view>
+</view>

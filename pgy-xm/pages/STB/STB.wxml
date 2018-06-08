@@ -1,0 +1,133 @@
+<!--pages/JDH/JDH.wxml-->
+<view class='container'>
+  <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
+    <view class='text'>默认房间</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+      <view class='text' style='width:250rpx;'>学习模式</view>
+      <view class='text'>保存</view>
+    </view>
+  <view class='TVpanel' wx:if='{{SBtype=="choose"}}'><view>{{brand}}{{name}}({{TVpanel}}/{{list.length}})</view></view>
+  <view class='list'>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.J_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_ONOFF"?"active":""}}' data-key='J_ONOFF' bindtap='action'>开/关</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.J_MENU==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_MENU"?"active":""}}' data-key='J_MENU' bindtap='action'>菜单</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.J_GUIDE==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_GUIDE"?"active":""}}' data-key='J_GUIDE' bindtap='action'>导视</view>
+      </view>
+    </view>
+    <view class='ones'>
+      <view>
+        <view class='btn' bindtap='showNumList'>123</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.J_BACK==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_BACK"?"active":""}}' data-key='J_BACK' bindtap='action'>返回</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.J_AK1==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_AK1"?"active":""}}' data-key='J_AK1' bindtap='action'>+</view>
+      </view>
+    </view>    
+     <view class='fourth'>
+     <view class='control'>
+        <view>
+          <view class='btn jia {{studyList.J_Pup==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_P+"?"active":""}}' data-key='J_P+' bindtap='action'>
+            +
+          </view>
+        </view>
+        <view>
+           <view class='btn middle '> 节目 </view> 
+        </view>
+        <view>
+          <view class='btn jian {{studyList.J_Pdown==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_P-"?"active":""}}' bindtap='action' data-key='J_P-'>-</view>
+        </view>
+      </view>
+      <view class='yuan'>    
+        <view class='box'>
+          <view class='up'>
+            <view class='{{studyList.J_UP==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_UP"?"active":""}}' bindtap='action' data-key='J_UP'>·</view>
+          </view>
+          <view class='middle'>
+            <view class='left {{studyList.J_LEFT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_LEFT"?"active":""}}' bindtap='action' data-key='J_LEFT'>·</view>
+            <view>              
+              <view class='confirm {{studyList.J_OK==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_OK"?"active":""}}' bindtap='action' data-key='J_OK'>OK</view>
+            </view>
+            <view class='right {{studyList.J_RIGHT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_RIGHT"?"active":""}}'  bindtap='action' data-key='J_RIGHT'>·</view>
+          </view>
+          <view class='down'>
+            <view class='{{studyList.J_DOWN==1?"finish":""}}  {{SBtype=="study"?"studyBtn":""}}{{btnName=="J_DOWN"?"active":""}}' bindtap='action' data-key='J_DOWN'>·</view>
+          </view>
+        </view>    
+      </view>
+      <view class='control'>
+        <view>
+          <view class='btn jia {{studyList.J_Vup==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_V+"?"active":""}}' data-key='J_V+' bindtap='action'> 
+            +
+          </view>
+        </view>
+        <view>
+           <view class='btn middle'> 音量 </view> 
+        </view>
+        <view>
+          <view class='btn jian {{studyList.J_Vdown==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="J_V-"?"active":""}}' bindtap='action' data-key='J_V-'>-</view>
+        </view>
+      </view>
+    </view> 
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>    
+    <action-sheet-item bindtap='studyBtn'>
+      <view>学习模式</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='hidePage'></view>
+  <view class='num' wx:if='{{hideNum==2}}'>
+    <view class='box'>
+      <view>{{boxNum}}</view>
+    </view>
+    <view class='numList'>
+      <view data-key='TD_1' data-num='1' bindtap='chooseNum'>1</view>
+      <view data-key='TD_2' data-num='2' bindtap='chooseNum'>2</view>
+      <view data-key='TD_3' data-num='3' bindtap='chooseNum'>3</view>
+    </view>
+    <view class='numList'>
+      <view data-key='TD_4' data-num='4' bindtap='chooseNum'>4</view>
+      <view data-key='TD_5' data-num='5' bindtap='chooseNum'>5</view>
+      <view data-key='TD_6' data-num='6' bindtap='chooseNum'>6</view>
+    </view>
+    <view class='numList'>
+      <view data-key='TD_7' data-num='7' bindtap='chooseNum'>7</view>
+      <view data-key='TD_8' data-num='8' bindtap='chooseNum'>8</view>
+      <view data-key='TD_9' data-num='9' bindtap='chooseNum'>9</view>
+    </view>
+    <view class='numList'>
+      <view bindtap='hidePage'>退出</view>
+      <view data-key='TD_0' data-num='0' bindtap='chooseNum'>0</view>
+      <view bindtap='actionNum'>确认</view>
+    </view>
+  </view>
+  <view class="listpicker" wx:if='{{hideNum==1}}'>
+    <view class="listheader">
+       <view bindtap="open" class="list-hide">关闭</view> 
+       <view class='list-title'></view> 
+       <view bindtap="open" class="list-true">确认</view> 
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='confirm'>
+      <picker-view-column style='text-align:center'>
+        <view wx:for="{{roomList}}" wx:key="item" data-id='{{item}}' style="line-height: 50px;padding-left:10px;">{{item}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+

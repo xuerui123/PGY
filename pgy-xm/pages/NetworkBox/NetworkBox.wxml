@@ -1,0 +1,97 @@
+<!--pages/HZ/HZ.wxml-->
+<view class='container'>
+  <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
+    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+      <view class='text' style='width:250rpx;'>学习模式</view>
+      <view class='text' bindtap='Qstudy'>保存</view>
+  </view>
+  <view class='SBpanel' wx:if='{{SBtype=="choose"}}'><view>{{brand}}{{name}}({{SBpanel}}/{{list.length}})</view></view>
+  <view class='list'>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.H_POWER==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_POWER"?"active":""}}' data-key='H_POWER' bindtap='action'>电源</view>
+      </view>      
+      <view>
+        <view class='btn {{studyList.H_PLAY==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_PLAY"?"active":""}}' data-key='H_PLAY' bindtap='action' style='display:flex;flex-direction:column;'>
+          <view>播放</view>
+          <view>暂停</view>
+        </view>
+      </view>
+      <view>
+        <view class='btn {{studyList.H_MUTE==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_MUTE"?"active":""}}' data-key='H_MUTE' bindtap='action'>静音</view>
+      </view>
+    </view>
+    <view class='ones'>      
+      <view>
+        <view class='btn {{studyList.H_RETURBN==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_RETURBN"?"active":""}}' data-key='H_RETURBN' bindtap='action'>返回</view>
+      </view>
+      <view>
+        <view class='btn'>+</view>
+      </view>
+      <view>
+        <view class='btn'>+</view>
+      </view>
+    </view>    
+    <view class='third'>
+      <view class='yuan'>
+        <view class='box'>
+          <view class='up'>
+            <view class='yuanbtn {{studyList.H_UP==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_UP"?"active":""}}' data-key='H_UP' bindtap='action'>·</view>
+          </view>
+          <view class='middle'>
+            <view class='left yuanbtn {{studyList.H_LEFT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_LEFT"?"active":""}}' data-key='H_LEFT' bindtap='action'>·</view>
+
+            <view class='confirm yuanbtn {{studyList.H_OK==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_OK"?"active":""}}' data-key='H_OK' bindtap='action'>确认</view>
+
+            <view class='right yuanbtn {{studyList.H_RIGHT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_RIGHT"?"active":""}}' data-key='H_RIGHT' bindtap='action'>·</view>
+          </view>
+          <view class='down'>
+            <view class='yuanbtn {{studyList.H_DOWN==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_DOWN"?"active":""}}' data-key='H_DOWN' bindtap='action'>·</view>
+          </view>
+        </view>
+      </view>
+      <view class='control'>
+        <view>
+          <view class='btn jia {{studyList.H_Vup==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_Vup"?"active":""}}' data-key='H_Vup' bindtap='action'>
+            +
+          </view>
+        </view>
+        <view>
+           <view class='btn middle'> 音量 </view> 
+        </view>
+        <view>
+          <view class='btn jian {{studyList.H_Vdown==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="H_Vdown"?"active":""}}' data-key='H_Vdown' bindtap='action'>-</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changType'>
+      <view>学习模式</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>        
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

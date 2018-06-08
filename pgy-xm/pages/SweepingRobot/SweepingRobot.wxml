@@ -1,0 +1,90 @@
+<!--pages/SDJQR/SDJQR.wxml-->
+<view class='container'>
+  <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
+    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+    <view class='text' style='width:250rpx;'>学习模式</view>
+    <view class='text' bindtap='Qstudy'>保存</view>
+  </view>
+  <view class='list'>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.S_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_ONOFF"?"active":""}}' data-key='S_ONOFF' bindtap='action'>开/关</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.S_RECHARGE==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_RECHARGE"?"active":""}}' data-key='S_RECHARGE' bindtap='action'>回充</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.S_APPOINTMENT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_APPOINTMENT"?"active":""}}' data-key='S_APPOINTMENT' bindtap='action'>预约</view>
+      </view>
+    </view>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.S_TIME==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_TIME"?"active":""}}' data-key='S_TIME' bindtap='action'>定时</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.S_AUTO==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_AUTO"?"active":""}}' data-key='S_AUTO' bindtap='action'>自动</view>
+      </view>
+      <view>
+        <view class='btn'>+</view>
+      </view>
+    </view>
+    <view class='third'>
+      <view class='yuan'>
+        <view class='box'>
+          <view class='up'>
+            <view class='yuanbtn {{studyList.S_UP==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_UP"?"active":""}}' data-key='S_UP' bindtap='action'>·</view>
+          </view>
+          <view class='middle'>
+            <view class='left yuanbtn {{studyList.S_LEFT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_LEFT"?"active":""}}' data-key='S_LEFT' bindtap='action'>·</view>
+
+            <view class='confirm yuanbtn {{studyList.S_OK==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_OK"?"active":""}}' data-key='S_OK' bindtap='action'>确认</view>
+
+            <view class='right yuanbtn {{studyList.S_RIGHT==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_RIGHT"?"active":""}}' data-key='S_RIGHT' bindtap='action'>·</view>
+          </view>
+          <view class='down'>
+            <view class='yuanbtn {{studyList.S_DOWM==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_DOWM"?"active":""}}' data-key='S_DOWM' bindtap='action'>·</view>
+          </view>
+        </view>
+      </view>
+      <view class='control'>
+        <view>
+          <view class='btn jia {{studyList.S_WALL==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_WALL"?"active":""}}' data-key='S_WALL' bindtap='action'>
+            沿边打扫
+          </view>
+        </view>
+        <view>
+          <view class='btn jian {{studyList.S_LOCAL==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="S_LOCAL"?"active":""}}' data-key='S_LOCAL' bindtap='action'>局部打扫</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changType'>
+      <view>学习模式</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

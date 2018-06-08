@@ -1,0 +1,19 @@
+<!--pages/user/user.wxml-->
+<view class='container'>
+  <view class='photo'>
+    <view class='text'>头像</view>
+    <view class='img' bindtap='addPhoto'>
+      <image mode='widthFix' src='{{imageSrc}}'></image>
+      <view class='iocn'></view>
+    </view>    
+  </view>
+  <view class='name'>
+    <view class='text'>昵称</view>
+    <view class='nick'>
+      <input value='{{name}}' bindinput='hostName'></input>
+      <view class='iocn'></view>
+    </view>    
+  </view>
+  <view class='num'>SN:KJHJKH64237</view>
+  <view class='btn' bindtap='host'>保存</view>
+</view>

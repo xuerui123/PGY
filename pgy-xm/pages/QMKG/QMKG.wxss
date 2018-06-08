@@ -1,0 +1,65 @@
+/* pages/QMKG/QMKG.wxss */
+
+page{
+  background: #efefef;
+}
+view{
+  box-sizing: border-box;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 95%;
+}
+.list .item {
+  display: flex;
+  width: 237.5rpx;
+  height: 237.5rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.list .item .box {
+  display: flex;
+  flex-direction: column;
+  width: 205rpx;
+  height: 205rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.list .item .img{
+  display: flex;
+  max-height: 110rpx;
+  margin-left: 20rpx;
+}
+.list .item image {
+  width:100rpx;    
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.list .item .box .name {
+  margin-top: 60rpx;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #595757;
+}
+.list .item .new{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list .item .new .name{
+  font-size: 38rpx;
+}
+.prompt{
+  display: flex;
+  width: 90%;
+  flex-direction: column;  
+}
+.prompt .text{
+  font-size: 32rpx;
+  color: #898787;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}

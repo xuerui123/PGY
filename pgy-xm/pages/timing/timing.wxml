@@ -1,0 +1,49 @@
+<!--pages/timing/timing.wxml-->
+<view class="container">
+  <view class='title'>定时（到达此时间后管家执行场景）</view>
+  <view class='time'>
+    <picker mode="time" value="{{startime}}" start="00:00" end="23:59" bindchange="bindStarTime" style='width:100%;text-align:center;'>
+      <view class="picker">
+        {{times}}
+      </view>
+    </picker>
+  </view>
+  <view class='title'>重复</view>
+  <view class='list'>
+    <view class='item' data-num='1' bindtap='choseRepeat'>
+      <view class='text'>
+        <text>只执行一次</text>
+        <view class='help'></view>
+      </view>
+      <view class='iocn {{repeat=="1"?"active":""}}'></view>
+    </view>
+    <view class='item' data-num='2' bindtap='choseRepeat'>
+      <view>每周一到周五</view>
+      <view class='iocn {{repeat=="2"?"active":""}}' ></view>
+    </view>
+    <view class='item' data-num='3' bindtap='choseRepeat'>
+      <view>每天</view>
+      <view class='iocn {{repeat=="3"?"active":""}}' ></view>
+    </view>
+    <view class='item' data-num='4' bindtap='choseRepeat'>
+      <view>自定义</view>
+      <view class='iocn {{repeat=="4"?"active":""}}' ></view>
+    </view>
+  </view>
+  <view class="show" hidden="{{flag}}" catchtap='showWeek'>
+  </view>
+  <view class='huise' hidden="{{flag}}">
+    <view class='top'>自定义</view>
+    
+    <view class='week' data-week='{{index}}' bindtap='choseWeek' wx:for='{{week}}' wx:key='index'>
+      <view>{{item.day}}</view>
+      <view class='iocn {{item.type?"active":""}}'></view>
+    </view>
+    
+    <!-- <view class='chose'>
+      <view>确定</view>
+      <view>取消</view>
+    </view> -->
+  </view>
+  <view class='btn' bindtap='preserve'>保存</view>
+</view>

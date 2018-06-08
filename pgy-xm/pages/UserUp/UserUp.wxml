@@ -1,0 +1,36 @@
+<!--pages/UserUp/UserUp.wxml-->
+<view class='container'>
+  <view class='title'>设备类别（选择遥控器模版界面）</view>
+  <view class='text'> 
+    <input placeholder-class='phcolor' disabled='true' placeholder='如“电视”' value='{{name}}'></input>
+    <view class='zhankai' bindtap='lookList'></view>
+    <view class='list' wx:if='{{showStatus}}'>
+      <view bindtap='choseName' data-str='电视' data-page='TV'>电视</view>
+      <view bindtap='choseName' data-str='机顶盒' data-page='JDH'>机顶盒</view>
+      <view bindtap='choseName' data-str='空调' data-page='KT'>空调</view>
+      <view bindtap='choseName' data-str='电风扇' data-page='DFS'>电风扇</view>
+      <view bindtap='choseName' data-str='空气净化器' data-page='KQJHQ'>空气净化器</view>
+      <view bindtap='choseName' data-str='加湿器' data-page='RSQ'>加湿器</view>
+      <view bindtap='choseName' data-str='投影仪' data-page='TYY'>投影仪</view>
+      <view bindtap='choseName' data-str='热水器' data-page='RSQ'>热水器</view>
+      <view bindtap='choseName' data-str='扫地机器人' data-page='SDJQR'>扫地机器人</view>
+      <view bindtap='choseName' data-str='功放' data-page='GF'>功放</view>
+      <view bindtap='choseName' data-str='DVD' data-page='DVD'>DVD</view>
+      <view bindtap='choseName' data-str='DVD' data-page='DVD'>浴霸</view>
+      <view bindtap='choseName' data-str='DVD' data-page='DVD'>新风机</view>
+    </view>
+  </view>
+  <view class='title'>设备品牌</view>
+  <view class='text'> 
+    <input placeholder-class='phcolor' placeholder='如“TCL”' bindinput='addbrand'></input>
+  </view>
+  <view class='title'>对应遥控器型号</view>
+  <view class='text'> 
+    <input placeholder-class='phcolor' placeholder='如“C2000YD-1”' bindinput='addnum'></input>
+  </view>
+  <view class='title'>上传者</view>
+  <view class='text'> 
+    <input placeholder-class='phcolor' placeholder='请输入用户名' bindinput='addnick'></input>
+  </view>
+  <view class='btn' bindtap='next'>下一步</view>
+</view>

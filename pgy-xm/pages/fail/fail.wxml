@@ -1,0 +1,19 @@
+<!--pages/fail/fail.wxml-->
+<view class="container">
+  <view class='top'>连接网络失败</view>
+  <view class='img'>
+    <image></image>
+  </view>
+  <view class='msg'>
+    <view class='title'>可能原因：</view>
+    <view class='list'>
+      <view>1.请检查Wi-Fi账号和密码</view>
+      <view>2.手机连接的是5GWi-Fi路由器</view>
+      <view>3.请调大手机音量并靠近管家</view>
+    </view>
+  </view>
+  <view class='operation'>
+    <view class='repeat'>重新联网</view>
+    <view class='more'>更多错误问题</view>
+  </view>
+</view>

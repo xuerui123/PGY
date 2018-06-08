@@ -1,0 +1,8 @@
+<!--pages/dome/dome.wxml-->
+<view class="btn-area">
+  <view class="body-view">
+    <text selectable='true' bindlongtap='a'>{{text}}</text>
+    <button bindtap="add">add line</button>
+    <button bindtap="remove">remove line</button>
+  </view>
+</view>

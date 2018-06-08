@@ -1,0 +1,85 @@
+<!--pages/controller1/controller1.wxml-->
+<view class='container'>
+  <view class='room'>
+    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+      <view class='text' style='width:250rpx;'>学习模式</view>
+      <view class='text'>保存</view>
+    </view>
+  <view class='KTpanel' wx:if='{{SBtype=="choose"}}'><view>{{brand}}{{name}}({{KTpanel}}/{{list.length}})</view></view>
+  <view class='list'>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="ON"?"active":""}}' wx:if='{{onoff==0}}' data-key='' data-onoff='1' bindtap='onKT'>开启</view>
+        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="OFF"?"active":""}}' wx:if='{{onoff==1}}' data-onoff='0' bindtap='offKT'>关闭</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="cool"?"active":""}}' bindtap='choseKTstatus' data-pattern='2' data-str='http://192.168.1.215:3400/img/snow.svg'>制冷</view>
+      </view>
+      <view>
+        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="hot"?"active":""}}' bindtap='choseKTstatus' data-pattern='5' data-str='http://192.168.1.215:3400/img/son.svg'>制热</view>
+      </view>
+    </view>
+    <view class='ones'>
+      <view>
+        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="speed"?"active":""}}' data-speed='1' bindtap='speed'>风速</view>
+      </view>
+      <view>
+        <view class='btn'>+</view>
+      </view>
+      <view>
+        <view class='btn'>+</view>
+      </view>
+    </view>
+    <view class='second'>
+      <view class='temperature'>
+        <view class='text'>{{temperature}}℃</view>
+        <view class='status'>
+          <view class='snow'>
+            <image mode='widthFix' src='{{KTstatus}}'></image>
+          </view>
+        </view>
+      </view>
+      <view class='control'>
+        <view>
+          <view class='btn jia {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="jia"?"active":""}}' bindtap='jia'>+</view>
+        </view>
+        <view>
+          <view class='btn middle'>温度</view>
+        </view>
+        <view>
+          <view class='btn jian {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="jian"?"active":""}}' bindtap='jian'>-</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>    
+    <action-sheet-item bindtap='changType'>
+      <view>学习模式</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>        
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

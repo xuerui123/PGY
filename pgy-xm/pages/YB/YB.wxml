@@ -1,0 +1,46 @@
+<!--pages/YB/YB.wxml-->
+<view class='container'>
+  <view class='room'>
+    <view class='text'>默认房间</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='row'>
+    <view>照明</view>
+  </view>
+  <view class='row'>
+    <view>吹风</view>
+    <view>唤气</view>
+    <view>干燥</view>
+  </view>
+  <view class='row'>
+    <view>风暖</view>
+    <view style='flex-direction: column'>
+      <text>自动</text>
+      <text>沐浴</text>
+    </view>
+    <view>待机</view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>    
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+       <view bindtap="open" class="list-hide">关闭</view> 
+       <view class='list-title'></view> 
+       <view bindtap="open" class="list-true">确认</view> 
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='confirm'>
+      <picker-view-column style='text-align:center'>
+        <view wx:for="{{roomList}}" wx:key="item" data-id='{{item}}' style="line-height: 50px;padding-left:10px;">{{item}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

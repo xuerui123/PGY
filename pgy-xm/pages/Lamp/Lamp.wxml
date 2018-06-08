@@ -1,0 +1,20 @@
+<!--pages/DF/DF.wxml-->
+<view class='container'>  
+<view class='room'>
+    <view class='text'>{{equipmentObj.dname}}</view>    
+  </view>
+  <view class='list'>
+    <view class='item'>
+      <view class='btn {{btnName=="LAMP_OPEN"?"active":""}}' data-key='LAMP_OPEN' bindtap='action'>开</view>
+    </view>
+    <view class='item' style='margin-top:30px'>
+      <view class='btn {{btnName=="lAMP_CLOSE"?"active":""}}' data-KEY='lAMP_CLOSE' bindtap='action'>关</view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">    
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>  
+</view>
