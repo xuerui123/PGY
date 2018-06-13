@@ -8,8 +8,9 @@ Page({
     KTstatus: 'http://192.168.1.215:3400/img/snow.svg',
     menuShow: true,
     hideNum: '',
-    roomList: [],
-    roomObj:{},
+    roomList: [],roomList: [],
+    roomName: '',
+    roomObj: {},
     uid: '',
     did: '',
     yid: '',
@@ -36,14 +37,10 @@ Page({
         key: 'equipmentObj',
         success: function (res) {
           let roomObj = { name: res.data.dloca }
-          that.setData({
-            yid: res.data.yid,
-            roomObj: roomObj,
-            equipmentObj: res.data
-          })
+          that.setData({ yid: res.data.yid, roomObj: roomObj, roomName: roomObj.name, equipmentObj: res.data })
         },
       })
-    } else {      
+    } else {
       this.setData({
         name: options.name,
         brand: options.brand,
@@ -71,7 +68,7 @@ Page({
       success: function (res) {
         that.setData({
           did: res.data,
-        })        
+        })
       }
     });
     wx.getStorage({
@@ -90,7 +87,7 @@ Page({
         })
       }
     });
-    if(this.data.SBtype=='choose'){
+    if (this.data.SBtype == 'choose') {
       this.loadList();
     }
     if (this.data.SBtype != 'choose') {
@@ -109,7 +106,7 @@ Page({
             })
           }
         }
-      });      
+      });
     }
   },
   loadList: function () {
@@ -137,10 +134,11 @@ Page({
   },
   choseKTstatus: function (e) {
     let that = this;
-    let onoff = this.data.onoff, pattern = e.currentTarget.dataset.pattern, speed = this.data.speed, temperature = this.data.temperature;
-    if(this.data.SBtype=='choose'){
+    let onoff = this.data.onoff, pattern = e.currentTarget.dataset.pattern, speed = this.data.speed,
+      temperature = this.data.temperature;
+    if (this.data.SBtype == 'choose') {
       let dkey = 1 + "" + pattern + "" + temperature + '' + speed + "11";
-      if(pattern==2){
+      if (pattern == 2) {
         wx.sendSocketMessage({
           data: JSON.stringify({
             "op": "device",
@@ -150,7 +148,7 @@ Page({
             "date": {
               "fm": "uip",
               "dkey": dkey,
-              "dvcm":'',
+              "dvcm": '',
               "yid": that.data.yid,
             }
           })
@@ -198,12 +196,12 @@ Page({
                     KTpanel: parseInt(that.data.KTpanel) + 1,
                     btnName: 'ON'
                   })
-                }                
+                }
               }
             }
           })
         })
-      }else if(pattern==5){
+      } else if (pattern == 5) {
         wx.sendSocketMessage({
           data: JSON.stringify({
             "op": "device",
@@ -213,7 +211,7 @@ Page({
             "date": {
               "fm": "uip",
               "dkey": dkey,
-              "dvcm":'',
+              "dvcm": '',
               "yid": that.data.yid,
             }
           })
@@ -231,10 +229,10 @@ Page({
                     "act": "update",
                     "uid": that.data.uid,
                     "did": that.data.did,
-                    "date": {                      
+                    "date": {
                       "fm": "uip",
                       'remoid': that.data.list[JSON.parse(that.data.KTpanel) - 1],
-                      "yid": that.data.yid,                      
+                      "yid": that.data.yid,
                     }
                   })
                 })
@@ -282,7 +280,7 @@ Page({
           })
         })
       }
-    }else{
+    } else {
       if (onoff == 1) {
         this.setData({
           KTstatus: e.currentTarget.dataset.str,
@@ -316,7 +314,7 @@ Page({
             "date": {
               "fm": "uip",
               "dkey": dkey,
-              dvcm:'',
+              dvcm: '',
               "yid": that.data.yid,
             }
           })
@@ -332,7 +330,7 @@ Page({
         })
       }
     }
-    
+
   },
   showMenu: function () {
     this.setData({
@@ -343,6 +341,7 @@ Page({
     this.setData({
       menuShow: !this.data.menuShow,
       hideNum: !this.data.hideNum,
+      roomObj: this.data.roomList[0]
     })
   },
   delEquipment: function () {
@@ -379,7 +378,8 @@ Page({
   },
   onKT: function (e) {
     let that = this;
-    let onoff = e.currentTarget.dataset.onoff, Pattern = this.data.Pattern, speed = this.data.speed, temperature = this.data.temperature;
+    let onoff = e.currentTarget.dataset.onoff, Pattern = this.data.Pattern, speed = this.data.speed,
+      temperature = this.data.temperature;
     let dkey = onoff + "" + Pattern + "" + temperature + '' + speed + "11"
     if (this.data.SBtype == 'choose') {
       wx.sendSocketMessage({
@@ -390,7 +390,7 @@ Page({
           "did": that.data.did,
           "date": {
             "fm": "uip",
-            dvcm:'',
+            dvcm: '',
             "dkey": dkey,
             'remoid': that.data.list[JSON.parse(that.data.KTpanel) - 1],
             "yid": that.data.yid,
@@ -440,7 +440,7 @@ Page({
                   btnName: 'ON'
                 })
               }
-              
+
             }
           }
         })
@@ -453,7 +453,7 @@ Page({
         that.setData({
           btnName: "",
           onoff: 1
-        })               
+        })
         wx.sendSocketMessage({
           data: JSON.stringify({
             "op": "device",
@@ -463,7 +463,7 @@ Page({
             "date": {
               "fm": "uip",
               "dkey": dkey,
-              dvcm:'',
+              dvcm: '',
               "yid": that.data.yid,
             }
           })
@@ -477,7 +477,8 @@ Page({
   },
   offKT: function (e) {
     let that = this;
-    let onoff = e.currentTarget.dataset.onoff, Pattern = this.data.Pattern, speed = this.data.speed, temperature = this.data.temperature;
+    let onoff = e.currentTarget.dataset.onoff, Pattern = this.data.Pattern, speed = this.data.speed,
+      temperature = this.data.temperature;
     this.setData({
       btnName: "OFF"
     })
@@ -498,7 +499,7 @@ Page({
         "date": {
           "fm": "uip",
           "dkey": dkey,
-          dvcm:'',
+          dvcm: '',
           "yid": that.data.yid,
         }
       })
@@ -509,7 +510,8 @@ Page({
   },
   speed: function () {
     let that = this;
-    let onoff = this.data.onoff, Pattern = this.data.Pattern, speed = this.data.speed, temperature = this.data.temperature;
+    let onoff = this.data.onoff, Pattern = this.data.Pattern, speed = this.data.speed,
+      temperature = this.data.temperature;
     if (onoff == 1) {
       this.setData({
         btnName: "speed"
@@ -536,7 +538,7 @@ Page({
           "date": {
             "fm": "uip",
             "dkey": dkey,
-            dvcm:'',
+            dvcm: '',
             "yid": that.data.yid,
           }
         })
@@ -554,7 +556,8 @@ Page({
   },
   jia: function () {
     let that = this;
-    let onoff = this.data.onoff, Pattern = this.data.Pattern, speed = this.data.speed, temperature = this.data.temperature;
+    let onoff = this.data.onoff, Pattern = this.data.Pattern, speed = this.data.speed,
+      temperature = this.data.temperature;
     if (onoff == 1) {
       if (temperature < 30) {
         temperature = parseInt(temperature) + 1
@@ -580,7 +583,7 @@ Page({
           "date": {
             "fm": "uip",
             "dkey": dkey,
-            dvcm:'',
+            dvcm: '',
             "yid": that.data.yid,
           }
         })
@@ -598,7 +601,8 @@ Page({
   },
   jian: function () {
     let that = this;
-    let onoff = this.data.onoff, Pattern = this.data.Pattern, speed = this.data.speed, temperature = this.data.temperature;
+    let onoff = this.data.onoff, Pattern = this.data.Pattern, speed = this.data.speed,
+      temperature = this.data.temperature;
     if (onoff == 1) {
       if (temperature > 19) {
         temperature = parseInt(temperature) - 1
@@ -623,7 +627,7 @@ Page({
           "did": that.data.did,
           "date": {
             "fm": "uip",
-            dvcm:'',
+            dvcm: '',
             "dkey": dkey,
             "yid": that.data.yid,
           }
@@ -672,7 +676,7 @@ Page({
   room: function (e) {
     console.log(e.detail.value[0])
     this.setData({
-      roomObj: this.data.roomList[e.detail.value[0]]
+      roomObj: this.data.roomList[e.detail.value[0]],      roomName:this.data.roomList[e.detail.value[0]].name
     })
     console.log(this.data)
   },

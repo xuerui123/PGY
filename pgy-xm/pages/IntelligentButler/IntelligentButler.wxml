@@ -1,7 +1,7 @@
 <!--pages/ZZGJ/ZZGJ.wxml-->
 <view class='container'>
   <view class='room'>
-    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='text'>{{roomName=="default"?"默认房间":roomName}}</view>
     <view class='iocn' bindtap="showMenu"></view>
   </view>
   <view class='list'>
@@ -77,8 +77,8 @@
     <text>修改管家名称如：“叮当猫”（不少于3个字）</text>
   </modal>
   <modal hidden="{{sensitiveShow}}" confirm-text="提交" cancel-text="取消" bindcancel="sensitiveCancel" bindconfirm="sensitiveConfirm" style='background:#efefef;'>   
-  <view  class='sensitive'>灵敏度：3</view>
- <slider bindchange="sensitivChange" min="0" max="10" value='3'/>    
+  <view  class='sensitive'>灵敏度：{{sensitiv}}</view>
+ <slider bindchange="sensitivChange" min="1" max="10" value='{{sensitiv}}'/>    
   </modal>  
   <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
   <view class="listpicker" wx:if='{{hideNum}}'>

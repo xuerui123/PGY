@@ -1,7 +1,7 @@
 <!--pages/JDH/JDH.wxml-->
 <view class='container'>
   <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
-    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='text'>{{roomName=="default"?"默认房间":roomName}}</view>
     <view class='iocn' bindtap="showMenu"></view>
   </view>
   <view class='study' wx:if='{{SBtype=="study"}}'>
@@ -89,6 +89,9 @@
     <action-sheet-item bindtap='studyBtn'>
       <view>学习模式</view>
     </action-sheet-item>
+    <action-sheet-item bindtap='bindNumBtn'>
+      <view>频道绑定</view>
+    </action-sheet-item>
     <action-sheet-item bindtap='delEquipment'>
       <view>删除该设备</view>
     </action-sheet-item>
@@ -131,6 +134,12 @@
         </view>
       </picker-view-column>
     </picker-view>
+  </view>
+  <view wx:if='{{hideNum==3}}'>
+    <modal title="绑定电视频道" confirm-text="提交" cancel-text="取消" bindcancel="hidePage" bindconfirm="bindnum">  
+    <input type='text' placeholder="请输入频道名" style='font-size:32rpx;border-bottom:1px solid #eee;padding:10rpx 0;'/>  
+    <input type='number' placeholder="请输入频道数" style='font-size:32rpx;border-bottom:1px solid #eee;padding:10rpx 0;'/>  
+</modal>
   </view>
 </view>
 

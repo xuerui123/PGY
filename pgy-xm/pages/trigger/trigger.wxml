@@ -58,7 +58,7 @@
   <view class='conditionlist'>
     <view class='item' wx:for='{{conditionlist}}' wx:key='index'>
       <view class='text'>{{item.loca}}{{item.name}}{{item.str}}{{item.num?item.num:''}}</view>
-      <view class='del'>删除</view>
+      <view class='del' bindtap='del' data-i='{{index}}'>删除</view>
     </view>
   </view>
   <view class='btn' bindtap='preserve'>保存</view>

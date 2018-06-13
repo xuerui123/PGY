@@ -9,10 +9,11 @@ Page({
     wordShow: true,
     sensitiveShow: true,
     hideNum: false,
-    roomList: [],
+    roomList: [],roomList: [],
     roomObj: {},
     status: 'VC_PLAY',
-    btnName: ''
+    btnName: '',
+    sensitiv:5
   },
 
   /**
@@ -26,7 +27,7 @@ Page({
         let roomObj = { name: res.data.dloca }
         that.setData({
           yid: res.data.yid,
-          roomObj: roomObj,
+          roomObj: roomObj,roomName: roomObj.name,
           equipmentObj: res.data,
         })
       },
@@ -163,6 +164,7 @@ Page({
     this.setData({
       menuShow: !this.data.menuShow,
       hideNum: !this.data.hideNum,
+      roomObj: this.data.roomList[0]
     })
   },
   delEquipment: function () {
@@ -198,12 +200,14 @@ Page({
     })
   },
   sensitivChange: function (e) {
-    console.log(e)
+    this.setData({
+      sensitiv: e.detail.value
+    })
   },
   room: function (e) {
     console.log(e.detail.value[0])
     this.setData({
-      roomObj: this.data.roomList[e.detail.value[0]]
+      roomObj: this.data.roomList[e.detail.value[0]],      roomName:this.data.roomList[e.detail.value[0]].name
     })
     console.log(this.data)
   },

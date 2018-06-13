@@ -1,0 +1,24 @@
+<!--pages/DoorUser/DoorUser.wxml-->
+<view class='container'>
+  <view class='list'>
+    <view class='item'>
+      <view class='left'>用户1</view>
+      <view class='right'>
+        <input type='text' placeholder-style='phcolor' placeholder='请输入用户名'></input>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='left'>用户2</view>
+      <view class='right'>
+        <input type='text' placeholder-style='phcolor' placeholder='请输入用户名'></input>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='left'>用户3</view>
+      <view class='right'>
+        <input type='text' placeholder-style='phcolor' placeholder='请输入用户名'></input>
+      </view>
+    </view>
+  </view>  
+  <view class='btn'>保存</view>
+</view>

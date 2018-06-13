@@ -158,7 +158,23 @@ Page({
     
   },
   
-  
+  del:function(e){    
+    let that =this;
+    wx.showModal({
+      title: '提示',
+      content: '确认删除该事件',
+      success:function(res){
+        if (res.confirm){
+          let arr = that.data.conditionlist;
+          arr.splice(e.currentTarget.dataset.i, 1)
+          that.setData({
+            conditionlist: arr
+          })
+        }
+      }
+    })
+    
+  },
 
   showHelp: function () {
     if (this.data.hidden) {
@@ -189,7 +205,8 @@ Page({
         wx.setStorage({
           key: 'sence',
           data: sence,
-        })     
+        })
+        wx.navigateBack({})     
       },
       fail:function(){
         let sence = {};
@@ -199,6 +216,7 @@ Page({
           key: 'sence',
           data: sence,
         })     
+        wx.navigateBack({})
       }
     })
              

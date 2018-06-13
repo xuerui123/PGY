@@ -33,6 +33,30 @@
         <view class='name'>窗帘</view>
       </view>
     </view>
+    <view class='item' bindtap='liangyijia' data-str='ClothesHorse'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/ClothesHorse.svg'></image>
+        </view>
+        <view class='name'>晾衣架</view>
+      </view>
+    </view>
+     <view class='item' bindtap='YB' data-str='Yuba'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/Yuba.svg'></image>
+        </view>
+        <view class='name'>浴霸</view>
+      </view>
+    </view>
+     <view class='item' bindtap='XFJ' data-str='NewFan'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='https://res-wx-xq-cspugoing.oss-cn-shenzhen.aliyuncs.com/wxapp/xqlogo/NewFan.svg'></image>
+        </view>
+        <view class='name'>新风机</view>
+      </view>
+    </view>
     <view class='item' bindtap='gopage' data-str='list' data-name='电风扇' data-page='Fan1' data-dch='01' data-dsys='2126'>
       <view class='box'>
         <view class='img'>

@@ -7,7 +7,7 @@ Page({
   data: {
     menuShow: true,
     hideNum: 0,
-    roomList: [],
+    roomList: [],roomList: [],
     setPage: 2,
     equipmentObj:{},
     uid:'',
@@ -38,7 +38,7 @@ Page({
           let roomObj = { name: res.data.dloca }
           that.setData({
             yid: res.data.yid,
-            roomObj: roomObj,
+            roomObj: roomObj,roomName: roomObj.name,
             equipmentObj: res.data,
             AK1: res.data.dnlp
           })
@@ -106,6 +106,7 @@ Page({
     this.setData({
       menuShow: !this.data.menuShow,
       hideNum: 1,
+      roomObj: this.data.roomList[0]
     })
   },
   showNumList: function () {
@@ -116,6 +117,12 @@ Page({
   hidePage: function () {
     this.setData({
       hideNum: 0,
+    })
+  },
+  bindNumBtn:function(){
+    this.setData({      
+      menuShow: !this.data.menuShow,
+      hideNum: 3,
     })
   },
   delEquipment: function () {
@@ -582,7 +589,7 @@ Page({
   room: function (e) {
     console.log(e.detail.value[0])
     this.setData({
-      roomObj: this.data.roomList[e.detail.value[0]]
+      roomObj: this.data.roomList[e.detail.value[0]],      roomName:this.data.roomList[e.detail.value[0]].name
     })
     console.log(this.data)
   },

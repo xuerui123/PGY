@@ -10,6 +10,15 @@
     <view class='text'>开启你的智能场景～</view>
   </view>
   <view class='list'>
+  <view class='item' wx:for='{{sceneList}}' wx:key='index' bindtap='gosence' data-obj='{{item}}'>
+      <view class='box'>
+        <view class='img'>
+          <image mode='widthFix' src='http://192.168.1.215:3400/img/cj.svg'></image>
+        </view>
+        <view class='status'>{{item.timearea}}</view>
+        <view class='name'>{{item.sna}}</view>
+      </view>
+    </view>
     <view class='item'>
       <view class='box'>
         <view class='img'>

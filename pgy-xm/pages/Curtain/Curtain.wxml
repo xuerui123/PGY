@@ -1,33 +1,44 @@
 <!--pages/CL/CL.wxml-->
 <view class='container'>
-  <view class='room'>
-    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+  <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
+    <view class='text'>{{roomName=="default"?"默认房间":roomName}}</view>
     <view class='iocn' bindtap="showMenu"></view>
   </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+      <view class='text' style='width:250rpx;'>学习模式</view>
+      <view class='text' bindtap='Qstudy'>保存</view>
+  </view>
   <view class='list'>
-    <view class='item'>
-      <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_OPEN"?"active":""}} {{studyList.CL_OPEN==1?"finish":""}}' data-key='CL_OPEN' bindtap='action'>打开</view>
+    <view class='cloumBox'>
+      <view class='item'>
+        <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_OPEN"?"active":""}} {{studyList.CL_OPEN==1?"finish":""}}' data-key='CL_OPEN' bindtap='action'>打开</view>
+      </view>
+      <view class='item'>
+        <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_CLOSE"?"active":""}} {{studyList.CL_CLOSE==1?"finish":""}}' data-key='CL_CLOSE' bindtap='action'>暂停</view>
+      </view>
+      <view class='item'>
+        <view class='btn {{SBtype=="study"?"studyBtn":""}}  {{btnName=="CL_PAUSE"?"active":""}} {{studyList.CL_PAUSE==1?"finish":""}}' data-key='CL_PAUSE' bindtap='action'>关闭</view>
+      </view>
     </view>
-    <view class='item'>
-      <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_OPEN2"?"active":""}} {{studyList.CL_OPEN2==1?"finish":""}}' data-key='CL_OPEN2' bindtap='action'>打开+</view>
-    </view>
-    <view class='item'>
-      <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_CLOSE"?"active":""}} {{studyList.CL_CLOSE==1?"finish":""}}' data-key='CL_CLOSE' bindtap='action'>暂停</view>
-    </view>
-    <view class='item'>
-      <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_CLOSE2"?"active":""}} {{studyList.CL_CLOSE2==1?"finish":""}}' data-key='CL_CLOSE2' bindtap='action'>暂停+</view>
-    </view>
-    <view class='item'>
-      <view class='btn {{SBtype=="study"?"studyBtn":""}}  {{btnName=="CL_PAUSE"?"active":""}} {{studyList.CL_PAUSE==1?"finish":""}}' data-key='CL_PAUSE' bindtap='action'>关闭</view>
-    </view>
-    <view class='item'>
-      <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_PAUSE2"?"active":""}} {{studyList.CL_PAUSE2==1?"finish":""}}' data-key='CL_PAUSE2' bindtap='action'>关闭+</view>
+    <view class='cloumBox' wx:if='{{layernum==2}}'>
+      <view class='item' wx:if='{{layernum==2}}'>
+        <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_OPEN2"?"active":""}} {{studyList.CL_OPEN2==1?"finish":""}}' data-key='CL_OPEN2' bindtap='action'>打开+</view>
+      </view>
+      <view class='item' wx:if='{{layernum==2}}'>
+        <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_CLOSE2"?"active":""}} {{studyList.CL_CLOSE2==1?"finish":""}}' data-key='CL_CLOSE2' bindtap='action'>暂停+</view>
+      </view>
+      <view class='item' wx:if='{{layernum==2}}'>
+        <view class='btn {{SBtype=="study"?"studyBtn":""}} {{btnName=="CL_PAUSE2"?"active":""}} {{studyList.CL_PAUSE2==1?"finish":""}}' data-key='CL_PAUSE2' bindtap='action'>关闭+</view>
+      </view>
     </view>
   </view>
   <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
     <action-sheet-item bindtap='showRoomList'>
       <view>选择房间</view>
       <view class='more'></view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='changLayer'>
+      <view>{{layernum==2?'单层窗帘':'双层窗帘'}}</view>
     </action-sheet-item>
     <action-sheet-item bindtap='changType'>
       <view>学习模式</view>
@@ -44,7 +55,7 @@
       <view bindtap="confirm" class="list-true">确认</view>
     </view>
     <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
-      <picker-view-column style='text-align:center'>        
+      <picker-view-column style='text-align:center'>
         <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
         </view>
       </picker-view-column>

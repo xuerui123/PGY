@@ -1,3 +1,4 @@
+// pages/ClothesHorse/ClothesHorse.js
 // pages/CL/CL.js
 Page({
 
@@ -8,16 +9,14 @@ Page({
     menuShow: true,
     hideNum: false,
     roomList: [],roomList: [],
-    roomObj:{},
+    roomObj: {},
     setPage: 2,
-    uid:'',
-    did:'',
-    yid:'',
-    equipmentObj:'',
-    btnName:'',
-    SBtype:'',
-    studyList: { 'CL_OPEN': 0, 'CL_OPEN2': 0, 'CL_CLOSE': 0, 'CL_CLOSE2': 0, 'CL_PAUSE': 0, 'CL_PAUSE2': 0},
-    layernum:'1'
+    uid: '',
+    did: '',
+    yid: '',
+    equipmentObj: '',
+    btnName: '',
+    SBtype: '',    
   },
 
   /**
@@ -52,7 +51,7 @@ Page({
       success: function (res) {
         that.setData({
           did: res.data
-        })        
+        })
       }
     })
     wx.getStorage({
@@ -66,7 +65,7 @@ Page({
     wx.getStorage({
       key: 'equipmentObj',
       success: function (res) {
-        let roomObj = {name:res.data.dloca}
+        let roomObj = { name: res.data.dloca }
         that.setData({
           yid: res.data.yid,
           roomObj: roomObj,roomName: roomObj.name,
@@ -77,16 +76,16 @@ Page({
     })
 
   },
-  action:function(e){
-    let that =this;
-    if(this.data.SBtype=='study'){
+  action: function (e) {
+    let that = this;
+    if (this.data.SBtype == 'study') {
       let studyList = that.data.studyList;
       let key = e.currentTarget.dataset.key;
       for (let item in studyList) {
         if (item == key) {
           studyList[item] = 1
         }
-      } 
+      }
       wx.sendSocketMessage({
         data: JSON.stringify({
           "op": "device",
@@ -96,8 +95,8 @@ Page({
           "date": {
             "pt": 1,
             "isgru": 0,
-            "dpanel": 'Curtain',
-            "dch": that.data.equipmentObj.dch,            
+            "dpanel": 'ClothesHorse',
+            "dch": that.data.equipmentObj.dch,
             "dkey": e.currentTarget.dataset.key,
             "yid": that.data.yid,
           }
@@ -109,15 +108,15 @@ Page({
           studyList: studyList
         })
       })
-    }else{
+    } else {
       this.setData({
         btnName: e.currentTarget.dataset.key
       })
-      setTimeout(function(){
+      setTimeout(function () {
         that.setData({
           btnName: ''
         })
-      },300)
+      }, 300)
       wx.sendSocketMessage({
         data: JSON.stringify({
           "op": "device",
@@ -126,7 +125,7 @@ Page({
           "did": that.data.did,
           "date": {
             "fm": "uip",
-            "dvcm":'',
+            "dvcm": '',
             "dkey": e.currentTarget.dataset.key,
             "yid": that.data.yid,
           }
@@ -136,7 +135,7 @@ Page({
         console.log(res)
       })
     }
-    
+
   },
   room: function (e) {
     console.log(e.detail.value[0])
@@ -174,10 +173,10 @@ Page({
       }
     })
   },
-  changType:function(){
+  changType: function () {
     this.showMenu();
     this.setData({
-      SBtype:'study'
+      SBtype: 'study'
     })
   },
   Qstudy: function () {
@@ -228,18 +227,7 @@ Page({
         }
       }
     })
-  },
-  changLayer:function(){
-    let num = this.data.layernum;
-    if(num==1){
-      num = 2;
-    }else if(num==2){
-      num = 1 ;
-    }
-    this.setData({
-      layernum:num
-    })
-  },
+  },  
   /**
    * 生命周期函数--监听页面隐藏
    */

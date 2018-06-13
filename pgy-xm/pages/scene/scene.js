@@ -18,7 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -33,6 +33,10 @@ Page({
    */
   onShow: function () {
     let that = this;
+    wx.setStorage({
+      key: 'sence',
+      data: {},
+    })
     wx.getStorage({
       key: 'did',
       success: function (res) {
@@ -66,7 +70,19 @@ Page({
       })
     wx.onSocketMessage(function (res) {
       console.log(JSON.parse(res.data));
-
+      that.setData({
+        sceneList: JSON.parse(res.data).msg
+      })
+    })
+  },
+  gosence:function(e){
+    console.log(e.currentTarget.dataset.obj)
+    wx.setStorage({
+      key: 'sence',
+      data: e.currentTarget.dataset.obj,
+    })
+    wx.navigateTo({
+      url: '../establish/establish?type=updata',
     })
   },
   /**

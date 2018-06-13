@@ -23,6 +23,20 @@ page{
   background: url(http://192.168.1.215:3400/img/set.svg) no-repeat center;
   background-size: auto 100% ;
 }
+.study{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20rpx 0;
+  align-items: center;
+  
+}
+.study view{  
+  display: flex;
+  width: 150rpx;
+  justify-content: center;
+}
 .row{
   display: flex;
   justify-content: center;
@@ -39,6 +53,9 @@ page{
   width:120rpx;
   border-radius: 50%;
   margin: 50rpx;
+}
+.row view.active{
+   background: #3de4ff;
 }
 action-sheet-item{
   display: flex;

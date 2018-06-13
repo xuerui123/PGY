@@ -1,7 +1,7 @@
 <!--pages/TYY/TYY.wxml-->
 <view class='container'>
   <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
-    <view class='text'>{{roomObj.name=="default"?"默认房间":roomObj.name}}</view>
+    <view class='text'>{{roomName=="default"?"默认房间":roomName}}</view>
     <view class='iocn' bindtap="showMenu"></view>
   </view>
   <view class='study' wx:if='{{SBtype=="study"}}'>

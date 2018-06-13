@@ -1,0 +1,100 @@
+<!--pages/XFJ/XFJ.wxml-->
+<view class='container'>
+  <view class='room' wx:if='{{SBtype!="choose"&&SBtype!="study"}}'>
+    <view class='text'>{{roomName=="default"?"默认房间":roomName}}</view>
+    <view class='iocn' bindtap="showMenu"></view>
+  </view>
+  <view class='study' wx:if='{{SBtype=="study"}}'>
+      <view class='text' style='width:250rpx;'>学习模式</view>
+      <view class='text' bindtap='Qstudy'>退出</view>
+  </view>
+  <view class='list'>
+    <view class='line'>
+      <view class='item'>
+        <view class='btn' data-key='SXF_STB'>待机</view>
+      </view>
+      <view class='item'>
+        <view class='btn' data-key='SXF_WWARM'>风暖</view>
+      </view>
+      <view class='box left'>
+        <view class='item'>
+          <view class='up' data-key='SXF_AXH'>强/弱</view>
+        </view>
+        <view class='item'>
+          <view class='middle'> </view>
+        </view>
+        <view class='item'>
+          <view class='down' data-key='SXF_B'>摆动</view>
+        </view>
+      </view>
+    </view>
+    <view class='line'>
+      <view class='item'>
+        <view class='btn' data-key='SXF_EXAIR'>换气</view>
+      </view>
+      <view class='item'>
+        <view class='btn' data-key='SXF_HDRY'>热干燥</view>
+      </view>
+      <view class='box'>
+        <view class='item'>
+          <view class='up' data-key='SXF_TIMEUP'>+</view>
+        </view>
+        <view class='item'>
+          <view class='middle'>定时</view>
+        </view>
+        <view class='item'>
+          <view class='down' data-key='SXF_TIMEDOWN'>-</view>
+        </view>
+      </view>
+    </view>
+    <view class='line'>
+      
+      <view class='item'>
+        <view class='btn' style='flex-direction: column;' data-key='SXF_24AIREX'>
+          <text>全天</text>
+          <text>换气</text>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='btn' data-key='SXF_CDRY'>凉干燥</view>
+      </view>
+      <view class='box'>
+        <view class='item'>
+          <view class='up' data-key='SXF_TEMUP'>+</view>
+        </view>
+        <view class='item'>
+          <view class='middle'>温度</view>
+        </view>
+        <view class='item'>
+          <view class='down' data-key='SXF_TEMDOWN'>-</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <action-sheet hidden="{{menuShow}}" bindchange="showMenu">
+    <action-sheet-item bindtap='showRoomList'>
+      <view>选择房间</view>
+      <view class='more'></view>
+    </action-sheet-item>    
+    <action-sheet-item bindtap='changType'>
+      <view>学习模式</view>
+    </action-sheet-item>
+    <action-sheet-item bindtap='delEquipment'>
+      <view>删除该设备</view>
+    </action-sheet-item>
+  </action-sheet>
+  <view class='showBG' wx:if='{{hideNum}}' bindtap='showRoomList'></view>
+  <view class="listpicker" wx:if='{{hideNum}}'>
+    <view class="listheader">
+      <view bindtap="showRoomList" class="list-hide">关闭</view>
+      <view class='list-title'></view>
+      <view bindtap="confirm" class="list-true">确认</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;text-align:center" value="{{value}}" bindchange='room'>
+      <picker-view-column style='text-align:center'>
+        <view wx:for="{{roomList}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

@@ -13,7 +13,7 @@ Page({
     yid:'',
     kaiguan:[],
     SBtype:'',
-    roomList: [],
+    roomList: [],roomList: [],
     roomObj: {},
     btnName:'',
     btn1:'86SW_1OPEN',
@@ -34,7 +34,7 @@ Page({
           let roomObj = { name:res.data.dloca}          
           that.setData({
             yid: res.data.yid,
-            roomObj: roomObj,
+            roomObj: roomObj,roomName: roomObj.name,
             num: res.data.dcap[res.data.dcap.length-1]
           })
           that.loadEQList()
@@ -352,6 +352,7 @@ Page({
     this.setData({
       menuShow: !this.data.menuShow,
       hideNum: !this.data.hideNum,
+      roomObj: this.data.roomList[0]
     })
   },
   delEquipment: function () {
@@ -393,7 +394,7 @@ Page({
   room: function (e) {
     console.log(e.detail.value[0])
     this.setData({
-      roomObj: this.data.roomList[e.detail.value[0]]
+      roomObj: this.data.roomList[e.detail.value[0]],      roomName:this.data.roomList[e.detail.value[0]].name
     })
     console.log(this.data)
   },

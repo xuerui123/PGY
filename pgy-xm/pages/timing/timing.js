@@ -122,6 +122,7 @@ Page({
         }
       }
       obj.mode= 2
+      obj.repeat= 1
     }
     wx.getStorage({
       key: 'sence',
@@ -135,6 +136,7 @@ Page({
           key: 'sence',
           data: sence,
         })
+        wx.navigateBack({})
       },
       fail:function(){
         let sence = {};
@@ -146,6 +148,7 @@ Page({
           key: 'sence',
           data: sence,
         })
+        wx.navigateBack({})
       }
     })
   },

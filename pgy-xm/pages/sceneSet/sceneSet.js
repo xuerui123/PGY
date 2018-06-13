@@ -99,6 +99,7 @@ Page({
               key: 'sence',
               data: sence,
             })
+            wx.navigateBack({})
           },
           fail:function(){
             let sence = {};
@@ -116,6 +117,7 @@ Page({
               key: 'sence',
               data: sence,
             })
+            wx.navigateBack({})
           },
         })    
       }

@@ -76,6 +76,7 @@ Page({
     this.setData({
       menuShow: !this.data.menuShow,
       hideNum: !this.data.hideNum,
+      roomObj: this.data.roomList[0]
     })
   },
   delEquipment: function () {

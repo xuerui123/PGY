@@ -140,15 +140,25 @@ page {
   color: #999;
   margin-bottom: 10rpx;
 }
-.btn{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #fff;
-  color: #1FB4FB;
+.btnlist{
   display: flex;
+  width: 100%;
+  margin-top: 50rpx;
   justify-content: center;
+}
+.btnlist .btn{    
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  
+}
+.btnlist .btn text{
+  width: 80%;
+  text-align: center;
+  background: #fff;
   padding: 30rpx 0;
+  color: #1FB4FB;
+  border-radius: 10rpx;
 }
 .show {
   position: fixed;

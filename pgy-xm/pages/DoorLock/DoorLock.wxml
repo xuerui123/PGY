@@ -27,9 +27,12 @@
       <view>选择房间</view>
       <view class='more'></view>
     </action-sheet-item>
-    <!-- <action-sheet-item bindtap='changeWord'>
-      <view>修改唤醒词</view>
-    </action-sheet-item> -->
+     <action-sheet-item bindtap='DoorUser'>
+      <view>用户管理</view>
+    </action-sheet-item> 
+     <action-sheet-item>
+      <view>安全模式</view>
+    </action-sheet-item> 
     <action-sheet-item bindtap='delEquipment'>
       <view>删除该设备</view>
     </action-sheet-item>

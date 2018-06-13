@@ -1,4 +1,4 @@
-/* pages/CL/CL.wxss */
+/* pages/ClothesHorse/ClothesHorse.wxss */
 page{
   background: #efefef;
 }
@@ -8,10 +8,10 @@ page{
   justify-content: space-between;
   background: #fff;
   padding: 20rpx 0;
-  align-items: center;
-  
+  align-items: center;    
 }
 .room .text{
+
   display: flex;
   margin-left: 5%;
 }
@@ -72,10 +72,7 @@ page{
   color: #dddedf;
   border: 1px solid #fff;
 }
-.list .item .btn.finish{
-  color: #000;
-  border: 1px solid #fff;
-}
+
 action-sheet-item{
   display: flex;
   align-items: center;

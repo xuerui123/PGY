@@ -61,6 +61,7 @@ Page({
             key: 'sence',
             data: sence,
           })
+          wx.navigateBack({})
         },
         fail:function(res){
           console.log(res)
@@ -71,6 +72,7 @@ Page({
             key: 'sence',
             data: sence,
           })
+          wx.navigateBack({})
         }        
       })
       

@@ -4,7 +4,7 @@
     <view class='topBox'>
       <view class='text'>场景</view>
       <view class='name'>
-        <input placeholder='请输入场景名称' placeholder-class='phcolor' vlaue = '{{senceName}}' bindinput='changeSenceName'></input>
+        <input placeholder='请输入场景名称' placeholder-class='phcolor' value="{{senceName}}" bindinput='changeSenceName'></input>
       </view>
     </view>
   </view>
@@ -35,60 +35,68 @@
     </view>
   </view>
   <view class='chose'>
-    <view class='choseBox2'wx:if='{{item!=""}}' wx:for='{{ifList}}'>{{item}}</view>
+    <view class='choseBox2' wx:if='{{item!=""}}' wx:for='{{ifList}}' wx:key='{{index}}' bindtap='delif' data-i='{{index}}'>{{item.name}}</view>
     <view class='choseBox' catchtap='showCondition' data-num='1'>
       + 选择条件，如：对管家说 “我回来了”
     </view>
   </view>
   <view class='just'>管家就会</view>
   <view class='chose'>
-    <view class='choseBox2'wx:if='{{item!=""}}' wx:for='{{doList}}'>{{item.name}}</view>
+    <view class='choseBox2' wx:if='{{item!=""}}' wx:for='{{doList}}' wx:key='{{index}}' bindtap='deldo' data-i='{{index}}'>{{item.name}}</view>
     <view class='choseBox' catchtap='showCondition' data-num='2'>
       + 执行动作，如：打开电视
     </view>
   </view>
-  <view class='btn' bindtap='addSence'>保存</view>
   <view class="show" hidden="{{flag}}" catchtap='showCondition'></view>
   <view class='huise' hidden="{{flag}}">
-        <view class='list1' wx:if='{{listnum==1}}'>
-          <view bindtap='goPage' data-page='speak' style='color:#fff;background:#7bd456'>
-          <text>对管</text>
-          <text>家说</text>
-          </view>
-          <view bindtap='goPage' data-page='trigger' class='middle' style='color:#fff;background:#f4a030'>
-          <text>事件</text>
-          <text>触发</text>
-          </view>
-          <view bindtap='goPage' data-Page='timing' style='color:#fff;background:#a7dcef'>
-          <text>定时</text>
-          <text>开启</text>
-          </view>
-        </view>
-        <view class='list2' wx:if='{{listnum==2}}'>
-          <view bindtap='sceneSet' data-id='voice'>
-            <text>语音回复</text>
-          </view>
-          <view bindtap='sceneSet' data-id='furnishing'>
-            <text>智能家居</text>
-          </view>
-          <view bindtap='sceneSet' data-id='music'> 
-            <text>音乐</text>
-          </view>
-          <view bindtap='sceneSet' data-id='story'>
-            <text>故事</text>
-          </view>
-          <view bindtap='sceneSet' data-id='weather'>
-            <text>天气</text>
-          </view>
-          <view bindtap='sceneSet' data-id='journalism'>
-            <text>新闻</text>
-          </view>
-          <view bindtap='sceneSet' data-id='radio'>
-            <text>电台</text>
-          </view>
-          <view bindtap='sceneSet' data-id='other'>
-            <text>其他</text>
-          </view>
-        </view>
+    <view class='list1' wx:if='{{listnum==1}}'>
+      <view bindtap='goPage' data-page='speak' style='color:#fff;background:#7bd456'>
+        <text>对管</text>
+        <text>家说</text>
+      </view>
+      <view bindtap='goPage' data-page='trigger' class='middle' style='color:#fff;background:#f4a030'>
+        <text>事件</text>
+        <text>触发</text>
+      </view>
+      <view bindtap='goPage' data-Page='timing' style='color:#fff;background:#a7dcef'>
+        <text>定时</text>
+        <text>开启</text>
+      </view>
     </view>
+    <view class='list2' wx:if='{{listnum==2}}'>
+      <view bindtap='sceneSet' data-id='voice'>
+        <text>语音回复</text>
+      </view>
+      <view bindtap='sceneSet' data-id='furnishing'>
+        <text>智能家居</text>
+      </view>
+      <view bindtap='sceneSet' data-id='music'>
+        <text>音乐</text>
+      </view>
+      <view bindtap='sceneSet' data-id='story'>
+        <text>故事</text>
+      </view>
+      <view bindtap='sceneSet' data-id='weather'>
+        <text>天气</text>
+      </view>
+      <view bindtap='sceneSet' data-id='journalism'>
+        <text>新闻</text>
+      </view>
+      <view bindtap='sceneSet' data-id='radio'>
+        <text>电台</text>
+      </view>
+      <view bindtap='sceneSet' data-id='other'>
+        <text>其他</text>
+      </view>
+    </view>
+  </view>
+  <view class='btnlist'>
+    <view class='btn' bindtap='addSence'>
+      <text>保存</text>
+    </view>
+    <view class='btn' bindtap='delSence'>
+      <text style='color:#fd506b' wx:if='{{senceType=="updata"}}'>删除</text>
+      <text style='color:#fd506b' wx:if='{{senceType==""}}'>取消</text>
+    </view>
+  </view>
 </view>

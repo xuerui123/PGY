@@ -1,4 +1,4 @@
-// pages/XFJ/XFJ.js
+// pages/DoorUser/DoorUser.js
 Page({
 
   /**

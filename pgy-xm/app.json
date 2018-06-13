@@ -1,6 +1,9 @@
 {
   "pages": [        
     "pages/my/my",    
+    "pages/DoorUser/DoorUser",    
+    "pages/DoorLock/DoorLock",
+    "pages/ClothesHorse/ClothesHorse",       
     "pages/trigger/trigger",      
     "pages/Lamp/Lamp",    
     "pages/equipment/equipment",
@@ -15,8 +18,8 @@
     "pages/TV/TV",
     "pages/ZDY2/ZDY2",        
     "pages/list/list",    
-    "pages/XFJ/XFJ",
-    "pages/YB/YB",                
+    "pages/NewFan/NewFan",
+    "pages/Yuba/Yuba",                
     "pages/UserUp/UserUp",
     "pages/myroom/myroom",
     "pages/addroom/addroom",
@@ -43,7 +46,7 @@
     "pages/KGlist/KGlist",
     "pages/SwitchOne/SwitchOne",    
     "pages/PowerAmplifier/PowerAmplifier",
-    "pages/DoorLock/DoorLock",
+    
     "pages/dome/dome",
     "pages/index/index",
     "pages/clock/clock",           

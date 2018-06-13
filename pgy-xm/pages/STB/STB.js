@@ -7,7 +7,7 @@ Page({
   data: {
     menuShow: true,
     hideNum: false,
-    roomList: [],
+    roomList: [],roomList: [],
     setPage: 2,
     equipmentObj: {},
     uid: '',
@@ -35,7 +35,7 @@ Page({
         key: 'equipmentObj',
         success: function (res) {
           that.setData({
-            yid: res.data.yid,
+            yid: res.data.yid,roomName: roomObj.name,
             equipmentObj: res.data
           })
         },
@@ -103,6 +103,7 @@ Page({
     this.setData({
       menuShow: !this.data.menuShow,
       hideNum: !this.data.hideNum,
+      roomObj: this.data.roomList[0]
     })
   },
   showNumList: function () {
@@ -558,7 +559,7 @@ Page({
   room: function (e) {
     console.log(e.detail.value[0])
     this.setData({
-      roomObj: this.data.roomList[e.detail.value[0]]
+      roomObj: this.data.roomList[e.detail.value[0]],      roomName:this.data.roomList[e.detail.value[0]].name
     })
     console.log(this.data)
   },

@@ -73,8 +73,8 @@ Page({
     let that = this;
     let str = e.currentTarget.dataset.str;
     wx.showModal({
-      title: '提示',
-      content: '确认添加该设备',
+      title: '确认添加该设备',
+      content: '暂仅支持杜亚、向日葵,其他品牌陆续开放中',
       success: function (res) {
         if (res.confirm) {
           wx.sendSocketMessage({
@@ -102,6 +102,141 @@ Page({
                 content: '添加设备失败'+JSON.parse(res.data).msg.message,
               })
             } else if (JSON.parse(res.data).ack == 1){              
+              wx.navigateBack({})
+              wx.showToast({
+                title: '添加成功',
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  liangyijia: function (e) {
+    let that = this;
+    let str = e.currentTarget.dataset.str;
+    wx.showModal({
+      title: '确认添加该设备',
+      content: '暂仅支持奥普,其他品牌陆续开放中',
+      success: function (res) {
+        if (res.confirm) {
+          wx.sendSocketMessage({
+            data: JSON.stringify({
+              "op": "device",
+              "act": "add",
+              "uid": that.data.uid,
+              "did": that.data.did,
+              "date": {
+                "dch": 15,
+                "dname": "晾衣架",
+                "dloca": "default",
+                "dlogo": 'ClothesHorse.svg',
+                "dcap": "",
+                "dsys": "1122",
+                "dpanel": "ClothesHorse"
+              }
+            })
+          })
+          wx.onSocketMessage(function (res) {
+            console.log(JSON.parse(res.data));
+            if (JSON.parse(res.data).ack == 0) {
+              wx.showModal({
+                title: '提示',
+                content: '添加设备失败' + JSON.parse(res.data).msg.message,
+              })
+            } else if (JSON.parse(res.data).ack == 1) {
+              wx.navigateBack({})
+              wx.showToast({
+                title: '添加成功',
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  YB: function (e) {
+    let that = this;
+    let str = e.currentTarget.dataset.str;
+    wx.showModal({
+      title: '确认添加该设备',
+      content: '暂仅支持奥普,其他品牌陆续开放中',
+      success: function (res) {
+        if (res.confirm) {
+          wx.sendSocketMessage({
+            data: JSON.stringify({
+              "op": "device",
+              "act": "add",
+              "uid": that.data.uid,
+              "did": that.data.did,
+              "date": {
+                "dch": 15,
+                "dname": "浴霸",
+                "dloca": "default",
+                "dlogo": 'Yuba.svg',
+                "dcap": "",
+                "dsys": "1122",
+                "dpanel": "Yuba"
+              }
+            })
+          })
+          wx.onSocketMessage(function (res) {
+            console.log(JSON.parse(res.data));
+            if (JSON.parse(res.data).ack == 0) {
+              wx.showModal({
+                title: '提示',
+                content: '添加设备失败' + JSON.parse(res.data).msg.message,
+              })
+            } else if (JSON.parse(res.data).ack == 1) {
+              wx.navigateBack({})
+              wx.showToast({
+                title: '添加成功',
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  XFJ: function (e) {
+    let that = this;
+    let str = e.currentTarget.dataset.str;
+    wx.showModal({
+      title: '确认添加该设备',
+      content: '暂仅支持奥普,其他品牌陆续开放中',
+      success: function (res) {
+        if (res.confirm) {
+          wx.sendSocketMessage({
+            data: JSON.stringify({
+              "op": "device",
+              "act": "add",
+              "uid": that.data.uid,
+              "did": that.data.did,
+              "date": {
+                "dch": 15,
+                "dname": "新风机",
+                "dloca": "default",
+                "dlogo": 'NewFan.svg',
+                "dcap": "",
+                "dsys": "1122",
+                "dpanel": "NewFan"
+              }
+            })
+          })
+          wx.onSocketMessage(function (res) {
+            console.log(JSON.parse(res.data));
+            if (JSON.parse(res.data).ack == 0) {
+              wx.showModal({
+                title: '提示',
+                content: '添加设备失败' + JSON.parse(res.data).msg.message,
+              })
+            } else if (JSON.parse(res.data).ack == 1) {
               wx.navigateBack({})
               wx.showToast({
                 title: '添加成功',
