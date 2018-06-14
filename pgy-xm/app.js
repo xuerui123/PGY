@@ -47,8 +47,8 @@ App({
                 "op": "mysys",
                 "act": "getuid",
                 "date": {
-                  userName: img,
-                  userImg: name,
+                  userName: name ,
+                  userImg: img ,
                   code: code
                 }
               })

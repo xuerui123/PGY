@@ -6,7 +6,8 @@ Page({
    */
   data: {
     uid:'',
-    did:''
+    did:'',
+    list:[]
   },  
 
   /**
@@ -27,9 +28,43 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    let that = this;
+    wx.getStorage({
+      key: 'did',
+      success: function (res) {
+        that.setData({
+          did: res.data,
+        })
+      }
+    });
+    wx.getStorage({
+      key: 'openid',
+      success: function (res) {
+        that.setData({
+          uid: res.data,
+        })
+        that.loadRobotList()
+      }
+    });
   },
-  
+  loadRobotList: function () {
+    let that = this;
+    wx.sendSocketMessage(
+      {
+        data: JSON.stringify({
+          "op": "mysys",
+          "act": "listrobot",
+          "uid": that.data.uid,
+          "did": that.data.did,
+        })
+      })
+    wx.onSocketMessage(function (res) {
+      console.log(JSON.parse(res.data))
+      that.setData({
+        list: JSON.parse(res.data).msg
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

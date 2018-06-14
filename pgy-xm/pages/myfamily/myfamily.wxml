@@ -1,22 +1,11 @@
 <!--pages/myfamily/myfamily.wxml-->
 <view class='container'>
   <view class='list'>
-    <view class='item'>
-      <view class='photo'>        
+    <view class='item' wx:for='{{list}}' wx:key='index'>
+      <view class='photo'>
+        <image mode='widthFix' src='{{item.img}}'></image>
       </view>
-      <view class='text'>微信好1</view>
-      <view class='dele'>x</view>
-    </view>
-    <view class='item'>
-      <view class='photo'>        
-      </view>
-      <view class='text'>微信好1</view>
-      <view class='dele'>x</view>
-    </view>
-    <view class='item'>
-      <view class='photo'>        
-      </view>
-      <view class='text'>微信好1</view>
+      <view class='text'>{{item.name}}({{item.pr=='admin'?'管理员':'成员'}})</view>
       <view class='dele'>x</view>
     </view>
   </view>
