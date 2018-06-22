@@ -9,7 +9,7 @@
       <view class='itemBox'>
         <view class='up' wx:if='{{SBtype=="add"||SBtype=="update"}}'>
           <view class='iocn' bindtap='gopage' data-str='KGlist' data-weizhi='1'>
-            <image mode='widthFix' src='http://192.168.1.215:3400/img/edit.svg'></image>
+            <image mode='widthFix' src='http://192.168.3.11:3400/img/edit.svg'></image>
           </view>
         </view>
         <view class='text'>
@@ -28,7 +28,7 @@
       <view class='itemBox'>
         <view class='up' wx:if='{{SBtype=="add"||SBtype=="update"}}'>
           <view class='iocn' bindtap='gopage' data-str='KGlist' data-weizhi='2'>
-            <image mode='widthFix' src='http://192.168.1.215:3400/img/edit.svg'></image>
+            <image mode='widthFix' src='http://192.168.3.11:3400/img/edit.svg'></image>
           </view>
         </view>
         <view class='text'>
@@ -47,7 +47,7 @@
       <view class='itemBox'>
         <view class='up' wx:if='{{SBtype=="add"||SBtype=="update"}}'>
           <view class='iocn' bindtap='gopage' data-str='KGlist' data-weizhi='3'>
-            <image mode='widthFix' src='http://192.168.1.215:3400/img/edit.svg'></image>
+            <image mode='widthFix' src='http://192.168.3.11:3400/img/edit.svg'></image>
           </view>
         </view>
         <view class='text'>

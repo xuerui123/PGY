@@ -5,11 +5,11 @@
     <view>直至底部灯光闪烁</view>
   </view>
   <view class='img'>
-    <image mode='widthFix' src='http://192.168.1.215:3400/img/shanshuo.gif'></image>
+    <image mode='widthFix' src='http://192.168.3.11:3400/img/shanshuo.gif'></image>
   </view>
   <view class='operation'>
-    <view class='start' bindtap='networking'>白色灯光闪烁，开始联网</view>
-    <view class='mistakes' bindtap='changeModal'>白色灯光未闪烁</view>
+    <view class='start' bindtap='networking'>灯光闪烁，开始联网</view>
+    <view class='mistakes' bindtap='changeModal'>灯光未闪烁</view>
   </view>
   <view class='bottom'>
     <view>PuGoing</view>

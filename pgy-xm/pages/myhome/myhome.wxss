@@ -14,16 +14,26 @@ page{
   background: #fff;
   align-items: center;
   padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
   
+}
+.list .item.use .name{
+  color: #3de4ff
 }
 .list .item .home{
   display: flex;
-  flex: 1;
-  
+  flex: 2;
+  justify-content: center;
+}
+.list .item .home image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  /* margin-left: 50rpx; */
 }
 .list .item .text{
   display: flex;
-  flex: 3;
+  flex: 4;
   flex-direction: column;
   color: #9b9fac;
 }
@@ -38,7 +48,7 @@ page{
   display: flex;
   width: 50rpx;
   height: 50rpx;
-  background: url(http://192.168.1.215:3400/img/key.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/key.svg) no-repeat center;
   background-size:80% auto; 
   margin-left: 30rpx;
 }

@@ -21,7 +21,7 @@ page{
   width: 40rpx;
   height: 40rpx;
   margin-right: 40rpx;
-  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+  background: url(http://192.168.3.11:3400/img/zhankai.svg) no-repeat right;
 }
 .text input{
   display: flex;

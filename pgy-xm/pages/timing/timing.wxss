@@ -42,17 +42,17 @@ page{
   width: 50rpx;
   height: 50rpx;
   margin-left: 30rpx;
-  background: url(http://192.168.1.215:3400/img/help.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/help.svg) no-repeat center;
   background-size:100% auto; 
 }
 .iocn{
-  background: url(http://192.168.1.215:3400/img/xuanqu.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/xuanqu.svg) no-repeat center;
   background-size:auto 100%; 
   width: 40rpx;
   height: 40rpx;
 }
 .iocn.active{
-   background: url(http://192.168.1.215:3400/img/xuanqu1.svg) no-repeat center;
+   background: url(http://192.168.3.11:3400/img/xuanqu1.svg) no-repeat center;
   background-size:auto 100%; 
 }
 

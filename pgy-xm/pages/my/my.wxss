@@ -49,30 +49,30 @@ page{
   height: 40rpx;
 }
 .iocn.znpw{
-  background: url(http://192.168.1.215:3400/img/znpw.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/znpw.svg) no-repeat center;
   background-size:100% auto;
 }
 .iocn.wdjr{
-  background: url(http://192.168.1.215:3400/img/wdjr.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/wdjr.svg) no-repeat center;
   background-size:100% auto;
 }
 .iocn.wdgj{
-  background: url(http://192.168.1.215:3400/img/wdgj.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/wdgj.svg) no-repeat center;
   background-size:100% auto;
 }
 .iocn.wdfj{
-  background: url(http://192.168.1.215:3400/img/wdfj.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/wdfj.svg) no-repeat center;
   background-size:100% auto;
 }
 .iocn.wdnz{
-  background: url(http://192.168.1.215:3400/img/clock.png) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/clock.png) no-repeat center;
   background-size: auto 100%;
 }
 .iocn.gyxt{
-  background: url(http://192.168.1.215:3400/img/gyxt.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/gyxt.svg) no-repeat center;
   background-size:100% auto;
 }
 .iocn.more{
-  background: url(http://192.168.1.215:3400/img/right.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/right.svg) no-repeat center;
   background-size:180% auto;
 }

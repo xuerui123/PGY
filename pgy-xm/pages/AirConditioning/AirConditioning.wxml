@@ -16,10 +16,10 @@
         <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="OFF"?"active":""}}' wx:if='{{onoff==1}}' data-onoff='0' bindtap='offKT'>关闭</view>
       </view>
       <view>
-        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="cool"?"active":""}}' bindtap='choseKTstatus' data-pattern='2' data-str='http://192.168.1.215:3400/img/snow.svg'>制冷</view>
+        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="cool"?"active":""}}' bindtap='choseKTstatus' data-pattern='2' data-str='http://192.168.3.11:3400/img/snow.svg'>制冷</view>
       </view>
       <view>
-        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="hot"?"active":""}}' bindtap='choseKTstatus' data-pattern='5' data-str='http://192.168.1.215:3400/img/son.svg'>制热</view>
+        <view class='btn {{studyList.F_ONOFF==1?"finish":""}} {{SBtype=="study"?"studyBtn":""}} {{btnName=="hot"?"active":""}}' bindtap='choseKTstatus' data-pattern='5' data-str='http://192.168.3.11:3400/img/son.svg'>制热</view>
       </view>
     </view>
     <view class='ones'>

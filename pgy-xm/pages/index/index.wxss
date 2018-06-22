@@ -44,13 +44,13 @@ input{
   height:80rpx;
 }
 .account .iocn{
-  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/zhankai.svg) no-repeat center;
 }
 .pwd .show{
-  background: url(http://192.168.1.215:3400/img/chakan.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/chakan.svg) no-repeat center;
 }
 .pwd .hid{
-  background: url(http://192.168.1.215:3400/img/chakan1.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/chakan1.svg) no-repeat center;
 }
 .prompt{
   margin-top: 50rpx;

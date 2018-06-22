@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class='logo'>
-    <image src='http://192.168.1.215:3400/img/guanjia2.svg'></image>
+    <image src='http://192.168.3.11:3400/img/guanjia2.svg'></image>
   </view>
   <view class='box'>
     <view class='account'>

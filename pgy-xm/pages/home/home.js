@@ -14,7 +14,8 @@ Page({
     toView: '',
     uid:'',
     did:'',
-    windowHeight: 0
+    windowHeight: 0,
+    userImg:''
   },
   domsg: function (e) {
     console.log(e.detail.value)
@@ -57,6 +58,10 @@ Page({
               toView: 'weizhi'
             })
           }, 1)
+          wx.setStorage({
+            key: 'chatList',
+            data: list,
+          })
         }
         
       })                            
@@ -76,6 +81,25 @@ Page({
               toView: 'weizhi'
             })
           }, 1)
+        }else{
+          console.log(JSON.parse(res.data))
+          list.push({
+            man: 'xq',
+            type: 'text',
+            content: JSON.parse(res.data).msg.data.text
+          })
+          that.setData({
+            chatList: list
+          })
+          setTimeout(function () {
+            that.setData({
+              toView: 'weizhi'
+            })
+          }, 1)
+          wx.setStorage({
+            key: 'chatList',
+            data: list,
+          })
         }
         
       })
@@ -85,8 +109,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function (options) {    
     let that = this;
     
     this.recorderManager = wx.getRecorderManager();
@@ -130,13 +153,29 @@ Page({
   onShow: function () {    
     let that = this;
     wx.getStorage({
+      key: 'userImg',
+      success: function (res) {
+        that.setData({
+          userImg: res.data
+        })
+      },
+    })
+    wx.getStorage({
+      key: 'chatList',
+      success: function (res) {
+        that.setData({
+          chatList: res.data
+        })
+      }
+    })
+    wx.getStorage({
       key: 'openid',
       success: function (res) {
         that.setData({
           uid: res.data
         })
       }
-    })
+    })    
     wx.getStorage({
       key: 'did',
       success: function (res) {

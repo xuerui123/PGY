@@ -7,7 +7,11 @@ Page({
    */
   data: {
     uid:'',
-    did:''
+    did:'',
+    hostImg:'',
+    name:'',
+    status:'',
+    pr:''
   },
 
   /**
@@ -43,9 +47,9 @@ Page({
       success: function (res) {
         that.setData({
           did: res.data
-        }) 
+        })         
+        // that.qonline()   
         that.listsysinfo()
-        that.qonline()   
       }
     })
     
@@ -63,28 +67,42 @@ Page({
       data: JSON.stringify({
         "op": "mysys",
         "act": "listsysinfo",
-        "uid": 'oNpl_wVYukIxDCvXQsTgKYnTiasU',
-        "did": "30373331323031313164313830303737",
+        "uid": that.data.uid,
+        "did": that.data.did,
       })
     })
     wx.onSocketMessage(function (res) {
       console.log(JSON.parse(res.data));
-    })
-  },
-  qonline:function(){
-    let that = this;
-    wx.sendSocketMessage({
-      data: JSON.stringify({
-        "op": "mysys",
-        "act": "qonline",
-        "uid": 'oNpl_wVYukIxDCvXQsTgKYnTiasU',
-        "did": "30373331323031313164313830303737",
+      that.setData({
+        hostImg: JSON.parse(res.data).msg.img,
+        name: JSON.parse(res.data).msg.name,
+        status: JSON.parse(res.data).msg.status,
+        pr: JSON.parse(res.data).msg.pr
       })
     })
-    wx.onSocketMessage(function (res) {
-      console.log(JSON.parse(res.data));      
-    })
+    
   },
+  // qonline:function(){
+  //   let that = this;
+    
+  //   wx.sendSocketMessage({
+  //     data: JSON.stringify({
+  //       "op": "mysys",
+  //       "act": "qonline",
+  //       "uid": that.data.uid,
+  //       "did": that.data.did,
+  //     })
+  //   })
+  //   wx.onSocketMessage(function (res) {
+  //     console.log(JSON.parse(res.data));   
+  //     that.setData({
+  //       hostImg: JSON.parse(res.data).msg.img,
+  //       name: JSON.parse(res.data).msg.name,
+  //       status: JSON.parse(res.data).msg.status,
+  //       pr: JSON.parse(res.data).msg.pr
+  //     })   
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面隐藏
    */

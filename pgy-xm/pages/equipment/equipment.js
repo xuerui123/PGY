@@ -15,6 +15,7 @@ Page({
     roomCategoryList: [],
     uid:'',
     did:'',
+    linestatus:''
   },
 
   /**
@@ -228,11 +229,31 @@ Page({
         that.setData({
           uid: res.data,          
         })     
-        that.loadroom();   
+        that.qonline();
+           
       }      
     });          
   },
-
+ qonline:function(){
+    let that = this;
+    wx.sendSocketMessage({
+      data: JSON.stringify({
+        "op": "mysys",
+        "act": "qonline",
+        "uid": that.data.uid,
+        "did": that.data.did,
+      })
+    })
+    wx.onSocketMessage(function (res) {
+      console.log(JSON.parse(res.data));   
+      that.setData({
+        linestatus: JSON.parse(res.data).msg
+      })
+      if (JSON.parse(res.data).msg =='online'){
+        that.loadroom();
+      }   
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

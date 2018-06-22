@@ -5,30 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    uid:'',
-    did:'',
-    list:[]
+    uid: '',
+    did: '',
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let that =this;
+    let that = this;
     wx.getStorage({
       key: 'did',
       success: function (res) {
@@ -47,56 +47,76 @@ Page({
       }
     });
   },
-  loadManList:function(){
-    let that =this;
+  loadManList: function () {
+    let that = this;
     wx.sendSocketMessage(
       {
         data: JSON.stringify({
           "op": "mysys",
           "act": "listmeber",
           "uid": that.data.uid,
-          "did": that.data.did,          
+          "did": that.data.did,
         })
       })
     wx.onSocketMessage(function (res) {
       console.log(JSON.parse(res.data))
       that.setData({
         list: JSON.parse(res.data).msg
-      })      
+      })
+    })
+  },
+  del: function (e) {
+    let that = this;
+    console.log(e.currentTarget.dataset.id)
+    wx.sendSocketMessage(
+      {
+        data: JSON.stringify({
+          "op": "mysys",
+          "act": "delmeber",
+          "uid": that.data.uid,
+          "did": that.data.did,
+          date: {
+            id: e.currentTarget.dataset.id
+          }
+        })
+      })
+    wx.onSocketMessage(function (res) {
+      console.log(JSON.parse(res.data))
+      that.loadManList()
     })
   },
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

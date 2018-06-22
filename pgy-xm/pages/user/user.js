@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    uid:'',
+    did:'',
     imageSrc:'',
     name:''
   },
@@ -13,7 +15,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    wx.getStorage({
+      key: 'did',
+      success: function (res) {
+        console.log(1)
+        console.log(res)
+        that.setData({
+          did: res.data,
+        })
+      }
+    });
+    wx.getStorage({
+      key: 'openid',
+      success: function (res) {
+        console.log(1)
+        console.log(res)
+        that.setData({
+          uid: res.data,
+        })
+        that.listsysinfo()
+      }
+    });
   },
 
   /**
@@ -27,12 +50,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   
+  },
+  listsysinfo:function(){
+    let that = this;
+    wx.sendSocketMessage(
+      {
+        data: JSON.stringify({
+          "op": "mysys",
+          "act": "listsysinfo",
+          "uid": that.data.uid,
+          "did": that.data.did,
+        })
+      })
+    wx.onSocketMessage(function (res) {
+      console.log(JSON.parse(res.data));
+      that.setData({
+        name: JSON.parse(res.data).msg.name,
+        imageSrc: JSON.parse(res.data).msg.img
+      })
+    })
   },
   addPhoto: function () {
     let that = this;
     wx.chooseImage({
-      count: 1, // 最多可以选择的图片张数，默认9
+      count: 1, // 最多可以选择的图片张数，默认1
       sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
       sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
       success: function (res) {
@@ -40,27 +82,28 @@ Page({
         console.log(imgsrc)
         that.setData({
           imageSrc: imgsrc[0]
+        })        
+        wx.uploadFile({
+          url: 'http://hotel.xq.cspugoing.com/api/upload',
+          filePath: imgsrc[0],
+          name: 'file',
+          formData: {
+            'user': 'test'
+          },
+          success: function (res) {
+            console.log(JSON.parse(res.data))
+            that.setData({
+              imageSrc: JSON.parse(res.data).msg
+            })  
+            wx.showToast({
+              title: '图片上传成功',
+              icon: 'success',
+              duration: 1000
+            })
+          }, fail: function (res) {
+            console.log(res)
+          }
         })
-        // wx.uploadFile({
-        //   url: '',
-        //   filePath: imgsrc[0],
-        //   name: 'retran_img',
-        //   formData: {
-        //     name: 'retran_img',
-        //     charact: that.data.uuid,
-        //     oppenid: that.data.openId
-        //   },
-        //   success: function (res) {
-        //     console.log(res)
-        //     wx.showToast({
-        //       title: '图片上传成功',
-        //       icon: 'success',
-        //       duration: 1000
-        //     })
-        //   }, fail: function (res) {
-        //     console.log(res)
-        //   }
-        // })
       },
       fail: function () {
         // fail
@@ -77,12 +120,13 @@ Page({
     })
   },
   host:function(){
+    let that = this;
     wx.sendSocketMessage({
       data: JSON.stringify({
         "op": "host",
-        "act": "updata",
-        "uid": 'oNpl_wVYukIxDCvXQsTgKYnTiasU',
-        "did": "30373331323031313164313830303737",
+        "act": "update",
+        "uid": that.data.uid,
+        "did": that.data.did,
         "date":{
           img:this.data.imageSrc,
           name:this.data.name
@@ -91,9 +135,9 @@ Page({
     })
     wx.onSocketMessage(function (res) {
       console.log(JSON.parse(res.data));
-      that.setData({
-        clockList: JSON.parse(res.data).msg
-      })
+      // that.setData({
+      //   clockList: JSON.parse(res.data).msg
+      // })
     })
   },
   /**

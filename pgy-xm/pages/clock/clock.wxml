@@ -2,7 +2,7 @@
 <view class="container">
   <view class='noClock' wx:if='{{clockList.length==0}}'>
     <view class='clock'>
-      <image src='http://192.168.1.215:3400/img/clock.png' mode='widthFix'>
+      <image src='http://192.168.3.11:3400/img/clock.png' mode='widthFix'>
       </image>
     </view>
     <view class='list'>

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    KTstatus: 'http://192.168.1.215:3400/img/snow.svg',
+    KTstatus: 'http://192.168.3.11:3400/img/snow.svg',
     menuShow: true,
     hideNum: '',
     roomList: [],roomList: [],

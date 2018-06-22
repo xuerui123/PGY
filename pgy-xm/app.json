@@ -1,6 +1,8 @@
 {
   "pages": [        
+      
     "pages/my/my",    
+    "pages/third/third",    
     "pages/DoorUser/DoorUser",    
     "pages/DoorLock/DoorLock",
     "pages/ClothesHorse/ClothesHorse",       
@@ -13,7 +15,7 @@
     "pages/Curtain/Curtain",
     "pages/QMKG/QMKG",
     "pages/Camera/Camera",    
-    "pages/third/third",               
+              
     "pages/DIY/DIY",
     "pages/TV/TV",
     "pages/ZDY2/ZDY2",        

@@ -1,11 +1,12 @@
-
 Page({
   data: {
     animationData: {},
     music: '',
     a: true,
+    did:'',
     audioCtx: {},
-    mobileSystem: ''
+    mobileSystem: '',
+    status:1
   },
   onShow: function () {
     let that = this
@@ -33,32 +34,17 @@ Page({
     var animation = wx.createAnimation({
       duration: 3000,
       timingFunction: 'ease',
-    })
-
-    this.animation = animation
-
-    // animation.scale(2, 2).rotate(15).step()
-
-    this.setData({
-      animationData: animation.export()
-    })
-    var n = 0;
-    //连续动画需要添加定时器,所传参数每次+1就行
-    setInterval(function () {
-      // animation.translateY(-60).step()
-      n = n + 1;
-      // console.log(n);
-      this.animation.rotate(360 * (n)).step()
-      this.setData({
-        animationData: this.animation.export()
-      })
-    }.bind(this), 1000)
+    })    
   },
   onLoad: function () {
     this.login();
   },
   onHide: function () {
-    wx.pauseBackgroundAudio()
+    if (that.data.mobileSystem != 'Android') {
+      wx.pauseBackgroundAudio()
+    } else {
+      that.audioCtx.pause();
+    }
   },
   gopage: function () {
     wx.switchTab({
@@ -84,31 +70,45 @@ Page({
     })
     wx.onSocketMessage(function (res) {
       console.log(JSON.parse(res.data));
-      let music = JSON.parse(res.data).msg;
-      console.log(that.audioCtx)
-      that.audioCtx.setSrc(that.data.music);
-      that.audioCtx.play();
-      that.setData({
-        music: music
-      })
-
+      that.setData({status:1})
+      let music = JSON.parse(res.data).msg;      
       if (that.data.mobileSystem != 'Android') {
         wx.playBackgroundAudio({
           dataUrl: music,
           title: '11',
           coverImgUrl: ''
         })
+      }else{
+        console.log(that.audioCtx)
+        that.audioCtx.setSrc(that.data.music);
+        that.audioCtx.play();
+        that.setData({
+          music: music
+        })
       } 
 
-      setTimeout(function () {
+      setTimeout(function () {        
         console.log(333)
-        that.audioCtx.pause();
-        wx.pauseBackgroundAudio()
+        clearInterval(timer)
+        if (that.data.mobileSystem != 'Android') {
+          wx.pauseBackgroundAudio()
+        }else{
+          that.audioCtx.pause();
+        }
+        if(that.data.did==''){
+          wx.showModal({
+            title: '联网失败',
+            content: '请检查Wi-Fi账号密码是否输入错误，家里网络是否通畅',
+            
+          })
+          
+        }                        
       }, 60000)
       console.log(that.data)
+      let timer = ''
       if (JSON.parse(res.data).ack == 1) { //联网请求成功                           
         let openId = wx.getStorageSync("openid");
-        let timer = setInterval(function () {
+        timer = setInterval(function () {
           wx.sendSocketMessage({
             data: JSON.stringify({
               "op": "mysys",
@@ -119,24 +119,22 @@ Page({
           wx.onSocketMessage(function (res) {
             console.log(res)
             if (JSON.parse(res.data).ack == 1) {
+              that.setData({ did: JSON.parse(res.data).msg.did,status:2})
               wx.setStorageSync("did", JSON.parse(res.data).msg.did);
               that.audioCtx.pause();
-              wx.pauseBackgroundAudio()              
-              timer='';
-              wx.navigateTo({
+              wx.pauseBackgroundAudio();
+              wx.switchTab({
                 url: '../home/home',
+                complete:function(res){
+                  console.log(res)
+                }
               })
+              clearInterval(timer)
+              
             }
           })
         }, 3000)
-
-      } else { //联网失败
-        wx.showToast({
-          title: '联网失败',
-          icon: 'success',
-          duration: 2000
-        })
-      }
+      } 
     })
   }
 })

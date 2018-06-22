@@ -20,7 +20,7 @@ page{
   display: flex;
   width: 60rpx;
   height:60rpx;
-  background: url(http://192.168.1.215:3400/img/wdfj.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/wdfj.svg) no-repeat center;
   margin-left: 30rpx;
   margin-right: 30rpx;
 }
@@ -28,7 +28,7 @@ page{
   display: flex;
   width: 60rpx;
   height:60rpx;
-  background: url(http://192.168.1.215:3400/img/jiahao.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/jiahao.svg) no-repeat center;
   background-size:69% auto; 
   margin-left: 30rpx;
   margin-right: 30rpx;

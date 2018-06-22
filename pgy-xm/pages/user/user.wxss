@@ -31,8 +31,7 @@ page{
 }
 .photo image{
   width: 100rpx;
-  height: 100rpx;
-  background: #eee;
+  height: 100rpx;  
 }
 
 .name{

@@ -6,22 +6,22 @@
     <view>声波传输Wi-Fi数据</view>
   </view>
   <view class='img show-iconView'>
-    <image src='' class="show-iconImage"  animation="{{animation}}" mode="scaleToFill"></image>
+    <image src='http://192.168.3.11:3400/img/kaojin.gif' class="show-iconImage"  animation="{{animation}}" mode="scaleToFill"></image>
   </view>
   <audio class="audio-box" src="{{music}}" controls="false" id="netWav"  loop="true"></audio>
   <view class='msg'>
-    <view class='loding'>
+    <view class='loding'  wx:if='{{status==1}}'>
       <view class='iocn show-iconView'>
-        <image src="http://192.168.1.215:3400/img/xuanzhuan.gif" style='width:40rpx;height:40rpx;margin-right:5px'class="show-iconImage" mode="scaleToFill"></image>
+        <image src="http://192.168.3.11:3400/img/xuanzhuan.gif" style='width:40rpx;height:40rpx;margin-right:5px'class="show-iconImage" mode="scaleToFill"></image>
       </view>
       <view class='text'>设备链接网络中...</view>
     </view>
-    <view class='next'>
+    <view class='next'  wx:if='{{status==2}}'>
       <view class='iocn'>
-        <image src="http://192.168.1.215:3400/img/gou.svg" mode="scaleToFill"></image>
+        <image src="http://192.168.3.11:3400/img/gou.svg" mode="scaleToFill"></image>
       </view>
       <view class='text' style='color:#a7dcef' bindtap='gopage'>链接成功</view>
-    </view>
+    </view>    
   </view>
   <view class='bottom'>
     <view>PuGoing</view>

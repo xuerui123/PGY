@@ -13,7 +13,7 @@ page{
   display: flex;
   width: 10%;  
   height: 50rpx;
-  background: url(http://192.168.1.215:3400/img/search.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/search.svg) no-repeat center;
   background-size:60% auto; 
 }
 .search input{

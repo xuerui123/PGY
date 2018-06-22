@@ -3,11 +3,11 @@
 
   <view class='photo' bindtap='goview' data-page='user'>
     <view class='img'>
-      <image mode='widthFix' src='http://192.168.1.215:3400/img/userPhoto.svg'></image>
+      <image mode='widthFix' src='{{hostImg?hostImg:"http://192.168.3.11:3400/img/userPhoto.svg"}}'></image>
     </view>
     <view class='msg'>
-      <view class='name'>新福利</view>
-      <view class='status' style='font-size:28rpx;'>连接成功</view>
+      <view class='name'>{{name?name:"我的家"}}</view>
+      <view class='status' style='font-size:28rpx;'>{{status}}</view>
     </view>
   </view>
   <view class='list'>

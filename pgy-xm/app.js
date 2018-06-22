@@ -24,7 +24,7 @@ App({
       });
     })
     wx.onSocketClose(function (res) { // 监听WebSocket关闭。
-      console.log('WebSocket关闭');
+      console.log('WebSocket关闭');      
       wx.connectSocket({
         url: 'wss://xqwxmp.cspugoing.com:4431'
       })
@@ -42,6 +42,10 @@ App({
           success: function (res) {
             console.log(res)
             let img = res.userInfo.avatarUrl, name = res.userInfo.nickName;
+            wx.setStorage({
+              key: 'userImg',
+              data: img,
+            })
             wx.sendSocketMessage({
               data: JSON.stringify({
                 "op": "mysys",
@@ -65,15 +69,19 @@ App({
                 })
               })
               wx.onSocketMessage(function (res) {                
-                let robotlisy = JSON.parse(res.data).msg
+                let robotlisy = JSON.parse(res.data).msg;
+                console.log('&(*&*&', robotlisy)
                 if (robotlisy.length != 0) {
-                  console.log('&(*&*&',robotlisy.length)
+                  
                   let did = '';
                   for(let i =0; i<robotlisy.length;i++){
                     if(robotlisy[i].use==1){
                       did = robotlisy[i].device_id
                       wx.setStorageSync("did", did);
                       console.log(did)
+                    }else{
+                      did = robotlisy[0].device_id
+                      wx.setStorageSync("did", did);
                     }
                   }
                 }else{                

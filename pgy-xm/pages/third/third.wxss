@@ -21,8 +21,12 @@ page{
   margin: 50rpx 0;
   width: 400rpx;
   height: 400rpx;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 50%;
+}
+.img image{  
+  width: 400rpx;
+  height: 400rpx;  
 }
 .msg>view{
   display: flex;

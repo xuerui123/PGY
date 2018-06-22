@@ -23,7 +23,7 @@ page {
   width: 80rpx;
   height: 50rpx;  
   margin-right: 5%;
-  background: url(http://192.168.1.215:3400/img/set.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/set.svg) no-repeat center;
   background-size: auto 100% ;
 }
 .SBpanel{
@@ -96,7 +96,7 @@ action-sheet-item{
 action-sheet-item .more{
   width: 40rpx;
   height: 40rpx;
-  background: url(http://192.168.1.215:3400/img/right.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/right.svg) no-repeat center;
   background-size: 580% auto;
 }
 

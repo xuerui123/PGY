@@ -19,14 +19,14 @@ page{
 .top .my{
   width: 80rpx;
   height: 90rpx;
-  background: url(http://192.168.1.215:3400/img/caidan.png) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/caidan.png) no-repeat center;
   background-size:70% auto; 
   margin-left: 20rpx;
 }
 .top .clock{
   width: 80rpx;
   height: 90rpx;
-  background: url(http://192.168.1.215:3400/img/clock.png) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/clock.png) no-repeat center;
   background-size:70% auto; 
   margin-right: 20rpx;
 }
@@ -43,7 +43,7 @@ page{
     z-index: 10;
 }
 .broadcast .iocn{
-  background: url('http://192.168.1.215:3400/img/laba.png') no-repeat center;
+  background: url('http://192.168.3.11:3400/img/laba.png') no-repeat center;
   background-size: 60% auto;
   width: 60rpx;
   height: 60rpx;

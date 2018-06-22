@@ -3,7 +3,25 @@
 page {
   background: #eee;
 }
-
+.offline{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  flex-direction: column;
+  top: 20%;
+  color: #9b9fac;
+  
+}
+.offline .img{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.offline .text{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 .navList {  
   margin-top: 20rpx;
   margin-bottom: 20rpx;
@@ -61,7 +79,7 @@ page {
   display: flex;
   width: 70rpx;
   height: 70rpx;
-  background: url(http://192.168.1.215:3400/img/jiahaobai.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/jiahaobai.svg) no-repeat center;
   background-size: auto 100%;
 }
 
@@ -111,7 +129,7 @@ page {
   position: absolute;
   width: 30rpx;
   height: 30rpx;
-  background: url(http://192.168.1.215:3400/img/biaoqian.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/biaoqian.svg) no-repeat center;
   background-size: 100% auto;
   top: 30rpx;
   right: 20rpx;

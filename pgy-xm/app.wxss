@@ -10,3 +10,8 @@
 .phcolor{
   color:#dfdfdf;
 }
+.cha{
+  display: flex;
+  width: 30rpx;
+  height: 30rpx; 
+}

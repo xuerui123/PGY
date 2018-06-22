@@ -18,7 +18,7 @@ page {
   width: 50rpx;
   height: 50rpx;
   margin-left: 30rpx;
-  background: url(http://192.168.1.215:3400/img/help.svg) no-repeat center;
+  background: url(http://192.168.3.11:3400/img/help.svg) no-repeat center;
   background-size: 90% auto;
 }
 
@@ -26,7 +26,7 @@ page {
   width: 50rpx;
   height: 50rpx;
   margin-right: 30rpx;
-  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+  background: url(http://192.168.3.11:3400/img/zhankai.svg) no-repeat right;
   padding-right: 15rpx;
   background-size: auto 50%;
 }
@@ -123,7 +123,7 @@ page {
   display: flex;
   flex: 1;
   height: 45rpx;
-  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+  background: url(http://192.168.3.11:3400/img/zhankai.svg) no-repeat right;
   background-size: auto 100%;
 }
 .search .list{
@@ -161,12 +161,12 @@ page {
   display: flex;
   flex: 1;
   height: 40rpx;
-  background: url(http://192.168.1.215:3400/img/xuanqu.svg) no-repeat left;
+  background: url(http://192.168.3.11:3400/img/xuanqu.svg) no-repeat left;
   background-size: auto 100%;
 }
 
 .list .item .chose.active {
-  background: url(http://192.168.1.215:3400/img/xuanqu1.svg) no-repeat left;
+  background: url(http://192.168.3.11:3400/img/xuanqu1.svg) no-repeat left;
   background-size: auto 100%;
 }
 
@@ -190,7 +190,7 @@ page {
   display: flex;
   flex: 2;
   justify-content: flex-end;
-  background: url(http://192.168.1.215:3400/img/zhankai.svg) no-repeat right;
+  background: url(http://192.168.3.11:3400/img/zhankai.svg) no-repeat right;
   padding-right: 40rpx;
   background-size: auto 50%;
 }

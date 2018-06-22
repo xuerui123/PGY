@@ -13,7 +13,7 @@
   <view class='item' wx:for='{{sceneList}}' wx:key='index' bindtap='gosence' data-obj='{{item}}'>
       <view class='box'>
         <view class='img'>
-          <image mode='widthFix' src='http://192.168.1.215:3400/img/cj.svg'></image>
+          <image mode='widthFix' src='http://192.168.3.11:3400/img/cj.svg'></image>
         </view>
         <view class='status'>{{item.timearea}}</view>
         <view class='name'>{{item.sna}}</view>
@@ -22,7 +22,7 @@
     <view class='item'>
       <view class='box'>
         <view class='img'>
-          <image mode='widthFix' src='http://192.168.1.215:3400/img/hj.svg'></image>
+          <image mode='widthFix' src='http://192.168.3.11:3400/img/hj.svg'></image>
         </view>
         <view class='status'>执行时间 18:30</view>
         <view class='name'>回家</view>
@@ -31,7 +31,7 @@
     <view class='item'>
       <view class='box'>
         <view class='img'>
-          <image mode='widthFix' src='http://192.168.1.215:3400/img/lj.svg'></image>
+          <image mode='widthFix' src='http://192.168.3.11:3400/img/lj.svg'></image>
         </view>
         <view class='status'>上次执行 18:30</view>
         <view class='name'>离家</view>
@@ -40,7 +40,7 @@
     <view class='item'>
       <view class='box'>
         <view class='img'>
-          <image mode='widthFix' src='http://192.168.1.215:3400/img/qc.svg'></image>
+          <image mode='widthFix' src='http://192.168.3.11:3400/img/qc.svg'></image>
         </view>
         <view class='status'>18:30</view>
         <view class='name'>起床</view>
@@ -49,7 +49,7 @@
     <view class='item'>
       <view class='box'>
         <view class='img'>
-          <image mode='widthFix' src='http://192.168.1.215:3400/img/sj.svg'></image>
+          <image mode='widthFix' src='http://192.168.3.11:3400/img/sj.svg'></image>
         </view>
         <view class='status'>18:30</view>
         <view class='name'>睡觉</view>
@@ -58,7 +58,7 @@
     <view class='item'>
       <view class='box'>
         <view class='img'>
-          <image mode='widthFix' src='http://192.168.1.215:3400/img/cj.svg'></image>
+          <image mode='widthFix' src='http://192.168.3.11:3400/img/cj.svg'></image>
         </view>
         <view class='status'>18:30</view>
         <view class='name'>新建</view>

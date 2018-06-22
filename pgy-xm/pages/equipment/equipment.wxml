@@ -1,7 +1,13 @@
 <!--pages/equipment/equipment.wxml-->
 <view class='container'>
   <view class='showpg' bindtap='hide' wx:if='{{showStatus}}'></view> 
-  <view class='title'>
+  <view class='offline' wx:if='{{linestatus=="offline"}}'>
+    <view class='img'>
+      <image src='http://192.168.3.11:3400/img/offline.svg'></image>
+    </view>    
+    <view class='text'>未找到对应主机，请检查设备</view>
+  </view>
+  <view class='title' wx:if='{{linestatus=="online"}}'>
     <view>
       <view class='welcome'>欢迎回家</view>
       <view class='add' bindtap='goPage' data-str='addEquipment'>
@@ -11,7 +17,7 @@
     <view class='text'>开启你的智能家居生活～</view>
     
   </view>
-  <scroll-view class="navList" scroll-x="true">
+  <scroll-view class="navList" scroll-x="true" wx:if='{{linestatus=="online"}}'>
     <view class='nav'>
       <view class="navBox {{roomName=='所有房间'?'active':''}}" bindtap='choseRoom' data-str='所有房间'>
         所有房间

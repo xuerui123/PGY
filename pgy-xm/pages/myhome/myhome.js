@@ -65,6 +65,34 @@ Page({
       })
     })
   },
+  del:function(e){
+    let that =this;
+    wx.showModal({
+      title: '提示',
+      content: '确认解绑该设备',
+      success:function(res){
+        if(res.confirm){
+          wx.sendSocketMessage(
+            {
+              data: JSON.stringify({
+                "op": "mysys",
+                "act": "delsysinfo",
+                "uid": that.data.uid,
+                "did": that.data.did,
+                date: {
+                  did: e.currentTarget.dataset.id
+                }
+              })
+            })
+          wx.onSocketMessage(function (res) {
+            console.log(JSON.parse(res.data))
+            that.loadRobotList()
+          })
+        }
+      }
+    })    
+   
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
